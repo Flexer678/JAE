@@ -1,4 +1,4 @@
-package jae.src.test.java.com.example.jae;
+package com.example.jae;
 
 /**
  * Unit test for simple App.

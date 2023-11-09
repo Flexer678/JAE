@@ -1,4 +1,4 @@
-package jae.src.main.java.com.example.jae;
+package com.example.jae;
 
 /**
  * Hello world!
