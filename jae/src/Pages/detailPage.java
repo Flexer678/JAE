@@ -1,4 +1,4 @@
-package Pages;
+package jae.src.Pages;
 
 public class detailPage {
     

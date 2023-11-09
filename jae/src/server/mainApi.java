@@ -1,3 +1,4 @@
+package jae.src.server;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -7,7 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-public class MainApi {
+public class mainApi {
 
     public static void main(String[] args) {
 
