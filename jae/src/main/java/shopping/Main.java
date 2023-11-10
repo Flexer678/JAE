@@ -1,5 +1,8 @@
 package shopping;
 
+//import item.java from sec/widgets
+import widgets.Item;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,18 +24,26 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         window = primaryStage;
+        String ae = "https://th.bing.com/th/id/R.e1707c345d5ac10c80a674030e606643?rik=pOsTg5KBoLuNvw&riu=http%3a%2f%2fwww.snut.fr%2fwp-content%2fuploads%2f2015%2f08%2fimage-de-paysage.jpg&ehk=1O5SWKkGpZ8yU%2b%2fAnLXG1v8k6BKxgyiXgHbOWBW1ir0%3d&risl=1&pid=ImgRaw&r=0";
         Button btn = new Button("d");
         Image image3 = new Image(
                 "https://th.bing.com/th/id/R.e1707c345d5ac10c80a674030e606643?rik=pOsTg5KBoLuNvw&riu=http%3a%2f%2fwww.snut.fr%2fwp-content%2fuploads%2f2015%2f08%2fimage-de-paysage.jpg&ehk=1O5SWKkGpZ8yU%2b%2fAnLXG1v8k6BKxgyiXgHbOWBW1ir0%3d&risl=1&pid=ImgRaw&r=0",
                 300, 0, true, false, true);
         ImageView imageView2 = new ImageView(image3);
 
-        VBox s = Item("a", "s", 1.3, "s");
+        Item s = new Item();
+        VBox a = s.sceneview("Hello World", ae, 100.0, "123");
+
         Label label1 = new Label("dddddddddddd");
         Button But = new Button("wssup");
+        But.setOnAction(
+                e -> {
+                    System.out.println("wasup");
+                    window.setScene(scene2);
+                });
 
         VBox layout1 = new VBox(1);
-        layout1.getChildren().addAll(label1, But, imageView2);
+        layout1.getChildren().addAll(label1, But, imageView2, a);
 
         scene1 = new Scene(layout1, 200, 200);
 
