@@ -1,4 +1,4 @@
-package jae.src.Pages;
+package Pages;
 
 public class signInPage {
 }
