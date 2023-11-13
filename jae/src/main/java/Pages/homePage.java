@@ -75,8 +75,8 @@ public class homePage extends Application implements EventHandler<ActionEvent>, 
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        System.out.println("dng");
         sceneController control = new sceneController();
+
         try {
             control.switchtoDetailPage(actionEvent);
         } catch (IOException e) {
