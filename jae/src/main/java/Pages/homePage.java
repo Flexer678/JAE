@@ -52,10 +52,11 @@ public class homePage extends Application implements EventHandler<ActionEvent>, 
             System.out.println(i);
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("./widgets/item.fxml"));
-            ItemController controller = new ItemController();
+            // ItemController controller = new ItemController();
 
             System.out.println(i);
-            boxLayout.getChildren().add(controller.getitemview("./assets/logo.png", "ssss", 22.2));
+            // boxLayout.getChildren().add(controller.getitemview("./assets/logo.png",
+            // "ssss", 22.2));
 
             categoryView.getItems().addAll(food);
         }
