@@ -44,6 +44,10 @@ public class ItemController implements Initializable {
 
     }
 
+    public void getDetail() {
+
+    }
+
     public VBox getitemview(String image, String name, Double price) {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("Item.fxml"));

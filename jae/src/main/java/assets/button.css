@@ -1,3 +1,8 @@
 button{
 	color: white;
 }
+
+
+#shoe_background{
+	-fx-background-color: linear-gradient(to right bottom, white 25%, pink );
+}

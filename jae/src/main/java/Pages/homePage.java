@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -23,43 +24,19 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import datamodel.*;
-import widgets.ItemController;
+import assets.localFiles;
 
 public class homePage extends Application implements EventHandler<ActionEvent>, Initializable {
     public static Button btn;
 
     @FXML
-    private ListView<String> categoryView;
-
-    @FXML
-    private Button detail_button;
-
-    @FXML
-    HBox boxLayout;
-
-    @FXML
-    private ImageView image;
-
-    ItemController cc = new ItemController();
-
-    String[] food = { "apple", "banana", "cherry", "grape", "orange", };
+    Label welcomeLabel;
 
     @Override
     public void initialize(URL url, ResourceBundle arg1) {
         // TODO Auto-generated method stub
-
-        for (int i = 0; i < categoryView.getItems().size(); i++) {
-            System.out.println(i);
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("./widgets/item.fxml"));
-            // ItemController controller = new ItemController();
-
-            System.out.println(i);
-            // boxLayout.getChildren().add(controller.getitemview("./assets/logo.png",
-            // "ssss", 22.2));
-
-            categoryView.getItems().addAll(food);
-        }
+        displayWelcome(localFiles.name);
+        // categoryView.getItems().addAll(food);
     }
 
     @Override
@@ -68,26 +45,30 @@ public class homePage extends Application implements EventHandler<ActionEvent>, 
         Parent root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("JAE store");
-        primaryStage.setScene(scene);
 
+        primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
+    }
+
+    public void displayWelcome(String username) {
+        System.out.println("hellio" + welcomeLabel.getText());
+        welcomeLabel.setText("Welcome " + username);
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         sceneController control = new sceneController();
-
         try {
             control.switchtoDetailPage(actionEvent);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
 
     }
 
-    public static void run(String[] args) {
+    public void run(String[] args) {
         launch(args);
     }
 }

@@ -64,7 +64,7 @@
                   <Insets bottom="40.0" left="60.0" right="60.0" />
                </VBox.margin>
             </VBox>
-            <Button fx:id="signIn" mnemonicParsing="false" onAction="#switchtoMainPage" prefHeight="25.0" prefWidth="212.0" style="-fx-background-color: blue; -fx-color: white;" stylesheets="@../assets/button.css" text="LOGIN " textFill="WHITE">
+            <Button fx:id="signIn_btn" mnemonicParsing="false" onAction="#signIn" prefHeight="25.0" prefWidth="212.0" style="-fx-background-color: blue; -fx-color: white;" stylesheets="@../assets/button.css" text="LOGIN " textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
