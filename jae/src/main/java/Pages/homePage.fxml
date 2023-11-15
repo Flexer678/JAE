@@ -168,7 +168,7 @@
                         </Label>
                         <ScrollPane prefHeight="288.0" prefWidth="780.0" style="-fx-border-color: white;">
                           <content>
-                              <FlowPane hgap="50.0" prefHeight="2238.0" prefWidth="752.0" style="-fx-background-color: white; -fx-border-color: white;">
+                              <FlowPane fx:id="item_view" hgap="50.0" prefHeight="2238.0" prefWidth="752.0" style="-fx-background-color: white; -fx-border-color: white;">
                                  <children>
                                     <VBox fx:id="itemview29" alignment="TOP_CENTER" prefHeight="333.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-width: 5px;">
                                        <children>
