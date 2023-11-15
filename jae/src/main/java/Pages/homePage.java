@@ -82,8 +82,10 @@ public class homePage extends Application implements EventHandler<ActionEvent>, 
     public void displayItems(List<String> items) {
         item_view.getChildren().clear();
 
-        ItemController item1 = new ItemController();
-        // VBox item2 = item1.getitemview("", "Alex", );
+        // ItemController item1 = new ItemController();
+        // VBox item2 =
+        // item1.getitemview("https://th.bing.com/th/id/OIP.YAXlTjvtEKchdMVc5laZhwHaE8?pid=ImgDet&rs=1",
+        // "Alex", 1.1);
         for (int i = 0; i < items.size(); i++) {
 
             String item = items.get(i);
@@ -94,6 +96,7 @@ public class homePage extends Application implements EventHandler<ActionEvent>, 
             hbox.setPadding(new javafx.geometry.Insets(10));
             // item_view.getChildren().add(item1.getitemview(item, items.get(i),
             // Double.parseDouble(items.get(i))));
+            // item_view.getChildren().add(item2);
             item_view.getChildren().add(hbox);
         }
     }

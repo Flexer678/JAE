@@ -1,5 +1,6 @@
 package widgets;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -48,19 +49,26 @@ public class ItemController implements Initializable {
 
     }
 
-    public VBox getitemview(String image, String name, Double price) {
+    public VBox getitemview(String image_, String name_, Double price_) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("Item.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("item.fxml"));
 
+        VBox box = new VBox();
+        try {
+            box.getChildren().add(fxmlLoader.load());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         ItemController controller = fxmlLoader.getController();
 
         Item_model model = new Item_model();
-        model.setName(name);
-        model.setPrice(price);
-        model.setImage_url(image);
-        controller.setdata(model);
+        // model.setName(name);
+        // model.setPrice(12);
+        // model.setImage_url(image);
+        // controller.setdata(model);
         System.out.println(name);
-        return itemview;
+        return box;
 
     }
 
