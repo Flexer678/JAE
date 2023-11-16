@@ -71,10 +71,10 @@ public class SignInPage extends Application implements EventHandler<ActionEvent>
     public void signIn(ActionEvent actionEvent) {
         String name = username.getText();
         System.out.println(name);
-        localFiles.setName(name);
+        localFiles.set_name(name);
         sceneController control = new sceneController();
         try {
-            control.switchtoMainPage(actionEvent, name);
+            control.switch_to_MainPage(actionEvent, name);
         } catch (IOException e) {
 
             e.printStackTrace();

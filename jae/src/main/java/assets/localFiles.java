@@ -9,7 +9,7 @@ public class localFiles {
         return name;
     }
 
-    public static void setName(String name) {
+    public static void set_name(String name) {
         localFiles.name = name;
     }
 }

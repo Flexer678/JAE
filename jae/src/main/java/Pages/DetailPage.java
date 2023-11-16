@@ -9,12 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class detailPage {
+public class DetailPage {
     @FXML
     Label name;
+    Label description;
 
-    public void displayname(String names) {
+    public void display_name(String names) {
         name.setText(names);
     }
+
 
 }

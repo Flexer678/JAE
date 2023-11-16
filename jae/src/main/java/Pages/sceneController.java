@@ -23,9 +23,9 @@ public class sceneController {
 
     }
 
-    public void switchtoMainPage(ActionEvent event, String name) throws IOException {
+    public void switch_to_MainPage(ActionEvent event, String name) throws IOException {
 
-        root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -33,7 +33,7 @@ public class sceneController {
 
     }
 
-    public void switchtoCartPage(ActionEvent event) throws IOException {
+    public void switch_to_CartPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("cartPage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

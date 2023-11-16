@@ -9,20 +9,20 @@ public class Main {
     public static void main(String[] args) {
 
         if (localFiles.isSignIn) {
-            runhPages(args);
+            run_hPages(args);
 
         } else {
-            runSiginIn(args);
+            run_SignIn(args);
         }
 
     }
 
-    private static void runhPages(String[] args) {
-        homePage runhPage = new homePage();
+    private static void run_hPages(String[] args) {
+        HomePage runhPage = new HomePage();
         runhPage.run(args);
     }
 
-    private static void runSiginIn(String[] args) {
+    private static void run_SignIn(String[] args) {
         SignInPage runSPage = new SignInPage();
         runSPage.run(args);
     }

@@ -6,31 +6,31 @@ public class Item_model {
 
     private String name;
 
-    public String getName() {
+    public String get_name() {
         return name;
     }
 
-    public void setName(String name) {
+    public void set_name(String name) {
         this.name = name;
     }
 
     private Double price;
 
-    public Double getPrice() {
+    public Double get_price() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void set_price(Double price) {
         this.price = price;
     }
 
     private String image_url;
 
-    public String getImage_url() {
+    public String get_image_url() {
         return image_url;
     }
 
-    public void setImage_url(String image_url) {
+    public void set_image_url(String image_url) {
         this.image_url = image_url;
     }
 
@@ -41,9 +41,9 @@ public class Item_model {
         this.image_url = image_url;
 
         Item_model model = new Item_model();
-        model.setName(this.name);
-        model.setPrice(this.price);
-        model.setImage_url(this.image_url);
+        model.set_name(this.name);
+        model.set_price(this.price);
+        model.set_image_url(this.image_url);
 
         return model;
     }

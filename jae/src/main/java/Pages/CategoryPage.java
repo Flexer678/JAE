@@ -7,12 +7,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
-public class categoryPage {
+public class CategoryPage {
 
     @FXML
     Label name;
 
-    public void displayname(String names) {
+    public void display_name(String names) {
         name.setText("wassup" + names);
     }
 

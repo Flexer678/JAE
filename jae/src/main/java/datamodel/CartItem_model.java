@@ -8,35 +8,35 @@ class CartItem_model {
     int quantity;
     String image;
 
-    public Double getPrice() {
+    public Double get_price() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void set_price(Double price) {
         this.price = price;
     }
 
-    public String getName() {
+    public String get_name() {
         return name;
     }
 
-    public void setName(String name) {
+    public void set_name(String name) {
         this.name = name;
     }
 
-    public int getQuantity() {
+    public int get_quantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void set_quantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public String getImage() {
+    public String get_image() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void set_image(String image) {
         this.image = image;
     }
 

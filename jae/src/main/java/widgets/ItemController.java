@@ -33,10 +33,10 @@ public class ItemController implements Initializable {
     @FXML
     VBox itemview;
 
-    public void setdata(Item_model item) {
-        image.setImage(new Image(item.getImage_url()));
-        name.setText(item.getName());
-        price.setText(item.getPrice().toString());
+    public void set_data(Item_model item) {
+        image.setImage(new Image(item.get_image_url()));
+        name.setText(item.get_name());
+        price.setText(item.get_price().toString());
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ItemController implements Initializable {
 
     }
 
-    public void getDetail() {
+    public void get_detail() {
 
     }
 

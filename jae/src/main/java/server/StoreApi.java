@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class storeApi {
+public class StoreApi {
     public static void main(String args[]) throws Exception {
         // Providing the website URL
         URL url = new URL("https://us-central1-readify-21f57.cloudfunctions.net/app/search/dart/");
@@ -47,7 +47,7 @@ public class storeApi {
         }
     }
 
-    public static ArrayList<Datas> makeData(String response) {
+    public static ArrayList<Datas> make_data(String response) {
         ArrayList<Datas> returnData = new ArrayList<Datas>();
         response = response.substring(response.indexOf(":[", 1) + 2, response.length() - 3);
         // System.out.println(response);
@@ -55,7 +55,7 @@ public class storeApi {
 
         for (String s : keyValuePairs) {
 
-            Datas.toMap(s + "}");
+            Datas.to_map(s + "}");
             // System.out.println(s + "}");
             // System.out.println("");
         }
@@ -77,7 +77,7 @@ class Datas {
 
     }
 
-    public static Datas toMap(String roughData) {
+    public static Datas to_map(String roughData) {
 
         String name = roughData.substring(roughData.indexOf("\"title\":") + 9,
                 roughData.indexOf("\",\"", roughData.indexOf("\"title\":") + 9));

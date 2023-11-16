@@ -9,12 +9,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
 
-public class cartPage implements Initializable {
+public class CartPage implements Initializable {
 
     @FXML
     VBox cartContainer;
 
-    ArrayList<Item_model> CartItems = new ArrayList<Item_model>();
+    ArrayList<Item_model> cartItems = new ArrayList<Item_model>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
