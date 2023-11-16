@@ -1,24 +1,31 @@
 package db;
 
+import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.firestore.DocumentReference;
+import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
+import com.google.firebase.cloud.FirestoreClient;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.cloud.firestore.Firestore;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.concurrent.CountDownLatch;
 
 public class initDB {
-    private static final String dbUrl = "https://cosr4s-jae-default-rtdb.firebaseio.com";
+    Firestore fireDB;
 
     public initDB(){
-        InputStream serviceAccount = this.getClass().getResourceAsStream("/Users/elwood/Documents/dbPrivateKeyTopSneakyDontShare.json");
+        InputStream serviceAccount = getClass().getResourceAsStream("dbKey.json");
         try {
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                    .setDatabaseUrl(dbUrl)
                     .build();
 
             FirebaseApp.initializeApp(options);
@@ -26,17 +33,18 @@ public class initDB {
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());
         }
-        FirebaseDatabase fireDB = FirebaseDatabase.getInstance(dbUrl);
-        DatabaseReference ref = fireDB.getReference().child("testdata");
-        ref.setValueAsync("I'm writing data", new DatabaseReference.CompletionListener() {
-            @Override
-            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-                if (databaseError != null) {
-                    System.out.println("Data could not be saved " + databaseError.getMessage());
-                } else {
-                    System.out.println("Data saved successfully.");
-                }
-            }
-        });
+        fireDB = FirestoreClient.getFirestore();
+    }
+
+    public void update(String coll, String doc, Map<String, Object> docData) {
+        // Create a Map to store the data we want to set
+        // Add a new document (asynchronously) in collection "cities" with id "LA"
+        ApiFuture<WriteResult> future = fireDB.collection(coll).document(doc).set(docData);
+        try {
+            WriteResult result = future.get();
+            System.out.println("updated :)" + result);
+        } catch (Exception e) {
+            System.out.println("error :(" + e);
+        }
     }
 }
