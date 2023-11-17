@@ -8,10 +8,28 @@ class CartItem_model {
     int quantity;
     String image;
 
+    int id;
+
+    String item_type;
+
+    public int get_id() {
+        return id;
+    }
+    public void set_id(int id) {
+        this.id = id;
+    }
+
+    public String get_item_type() {
+        return item_type;
+    }
+
+    public void set_item_type(String price) {
+        this.item_type = item_type;
+    }
+
     public Double get_price() {
         return price;
     }
-
     public void set_price(Double price) {
         this.price = price;
     }
