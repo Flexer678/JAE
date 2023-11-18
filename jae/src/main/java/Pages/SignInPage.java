@@ -68,13 +68,23 @@ public class SignInPage extends Application implements EventHandler<ActionEvent>
 
     }
 
+    public String getUsername(){
+        return username.getText();
+    }
+
+    
+    public String getPassword(){
+        return password.getText();
+    }
+
+
     public void signIn(ActionEvent actionEvent) {
         String name = username.getText();
-        System.out.println(name);
+
         localFiles.set_name(name);
         sceneController control = new sceneController();
         try {
-            control.switch_to_MainPage(actionEvent, name);
+            control.switchtoMainPage(actionEvent, name);
         } catch (IOException e) {
 
             e.printStackTrace();

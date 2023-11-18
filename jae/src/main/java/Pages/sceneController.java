@@ -1,7 +1,9 @@
 package Pages;
 
 import java.io.IOException;
+import java.lang.ModuleLayer.Controller;
 
+import assets.localFiles;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -23,17 +25,18 @@ public class sceneController {
 
     }
 
-    public void switch_to_MainPage(ActionEvent event, String name) throws IOException {
-
-        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+    public void switchtoMainPage(ActionEvent event, String name) throws IOException {
+        FXMLLoader loader = new  FXMLLoader(getClass().getResource("homePage.fxml"));
+        root =loader.load();
+        HomePage page = loader.getController();
+        page.displayWelcome(name);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
-    public void switch_to_CartPage(ActionEvent event) throws IOException {
+    public void switchtoCartPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("cartPage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -43,7 +46,7 @@ public class sceneController {
     }
 
     public void switchtoSignInPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("cartPage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("signpage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

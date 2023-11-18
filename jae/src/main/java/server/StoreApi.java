@@ -47,6 +47,8 @@ public class StoreApi {
         }
     }
 
+   
+
     public static ArrayList<Datas> make_data(String response) {
         ArrayList<Datas> returnData = new ArrayList<Datas>();
         response = response.substring(response.indexOf(":[", 1) + 2, response.length() - 3);
