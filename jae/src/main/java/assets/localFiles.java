@@ -1,7 +1,15 @@
 package assets;
 
+
+import datamodel.CartItem_model;
+
 public class localFiles {
     public static String name = "";
+
+
+    //where the db is stored
+    public ArrayList<CartItem_model> = new ArrayList<CartItem_model>();
+
 
     public static Boolean isSignIn = false;
 

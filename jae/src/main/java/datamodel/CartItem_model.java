@@ -1,16 +1,14 @@
 
 package datamodel;
 
-class CartItem_model {
+public class CartItem_model {
 
     Double price;
     String name;
     int quantity;
     String image;
-
     int id;
-
-    String item_type;
+    Boolean isBook;
 
     public int get_id() {
         return id;
@@ -19,12 +17,12 @@ class CartItem_model {
         this.id = id;
     }
 
-    public String get_item_type() {
-        return item_type;
+    public Boolean get_isBook() {
+        return isBook;
     }
 
-    public void set_item_type(String price) {
-        this.item_type = item_type;
+    public void set_item_type(Boolean isBook) {
+        this.isBook = isBook;
     }
 
     public Double get_price() {
