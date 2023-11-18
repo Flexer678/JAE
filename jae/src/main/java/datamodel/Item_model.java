@@ -2,50 +2,102 @@ package datamodel;
 
 public class Item_model {
 
-    // constructor
 
-    private String name;
 
-    public String get_name() {
-        return name;
-    }
+    String title;
+    Double price;
+    String image;
+    int id;
+    String description;
+    Boolean isBook;
 
-    public void set_name(String name) {
-        this.name = name;
-    }
-
-    private Double price;
-
-    public Double get_price() {
-        return price;
-    }
-
-    public void set_price(Double price) {
+    Item_model(String title,String image , int id, double price, Boolean isBook,String description) {
+        this.title = title;
         this.price = price;
+        this.image = image;
+        this.isBook = isBook;
+        this.id = id;
+        this.description = description;
+        
+
     }
 
-    private String image_url;
 
-    public String get_image_url() {
-        return image_url;
+    public Item_model() {
     }
 
-    public void set_image_url(String image_url) {
-        this.image_url = image_url;
+
+    //converts stored data to type Item_model for the itemController
+    public static Item_model store_to_map(String roughData) {
+        //rough data comes in string.
+
+        //initializes them in case of later exception
+        Double price = 0.0;
+        String image = "", description = "", category = "", name = "";
+        int id = 0;
+        try {
+            name = roughData.substring(roughData.indexOf("\"title\":") + 9,
+                    roughData.indexOf("\",\"", roughData.indexOf("\"title\":") + 9));
+            price = Double.parseDouble(roughData.substring((roughData.indexOf("\"price\":")) + 8,
+                    roughData.indexOf("\"description\":") - 1));
+            image = roughData.substring((roughData.indexOf("\"image\":")) + 9, roughData.indexOf("\"rating\":") - 2);
+            id = Integer.parseInt(
+                    roughData.substring((roughData.indexOf("\"id\":")) + 5, roughData.indexOf("\"title\":") - 1));
+            description = roughData.substring((roughData.indexOf("\"description\":")) + 15,
+                    roughData.indexOf("\"category\":") - 2);
+            category = roughData.substring((roughData.indexOf("\"category\":")) + 12,
+                    roughData.indexOf("\"image\":") - 2);
+
+        } catch (Exception e) {
+            System.out.println("somethign went wrong");
+        }
+        Item_model newData = new Item_model(name,image,id,price, false,description );
+        System.out.println(newData.title);
+        System.out.println(newData.price);
+        System.out.println(newData.image);
+        System.out.println(newData.id);
+        System.out.println(newData.description);
+
+        System.out.println("\n");
+
+        return newData;
     }
 
-    public Item_model Item_model(String name, Double price, String image_url) {
-        this.name = name;
-        this.price = price;
+    public static Item_model book_to_map(String roughData) {
+        //rough data comes in string.
 
-        this.image_url = image_url;
+        //initializes them in case of later exception
+        Double price = 0.0;
+        String image = "", description = "", category = "", name = "";
+        int id = 0;
+        try {
+            name = roughData.substring(roughData.indexOf("\"title\":") + 9,
+                    roughData.indexOf("\",\"", roughData.indexOf("\"title\":") + 9));
+            price = Double.parseDouble(roughData.substring((roughData.indexOf("\"price\":")) + 8,
+                    roughData.indexOf("\"description\":") - 1));
+            image = roughData.substring((roughData.indexOf("\"image\":")) + 9, roughData.indexOf("\"rating\":") - 2);
+            id = Integer.parseInt(
+                    roughData.substring((roughData.indexOf("\"id\":")) + 5, roughData.indexOf("\"title\":") - 1));
+            description = roughData.substring((roughData.indexOf("\"description\":")) + 15,
+                    roughData.indexOf("\"category\":") - 2);
+            category = roughData.substring((roughData.indexOf("\"category\":")) + 12,
+                    roughData.indexOf("\"image\":") - 2);
 
-        Item_model model = new Item_model();
-        model.set_name(this.name);
-        model.set_price(this.price);
-        model.set_image_url(this.image_url);
+        } catch (Exception e) {
+            System.out.println("somethign went wrong");
+        }
+        Item_model newData = new Item_model(name,image,id,price, true,description );
+        System.out.println(newData.title);
+        System.out.println(newData.price);
+        System.out.println(newData.image);
+        System.out.println(newData.id);
+        System.out.println(newData.description);
 
-        return model;
+        System.out.println("\n");
+
+        return newData;
     }
+
+
 
 }

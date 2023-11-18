@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="itemview" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="itemview" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="widgets.ItemController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #e6e6e6; -fx-background-radius: 20px;">
          <children>
@@ -25,7 +25,7 @@
             </VBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text fx:id="itemName" fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Strawberry" textAlignment="CENTER" wrappingWidth="125.693359375">
+                  <Text fx:id="name" fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Strawberry" textAlignment="CENTER" wrappingWidth="125.693359375">
                      <font>
                         <Font name="System Bold" size="19.0" />
                      </font>
@@ -34,7 +34,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text fx:id="itemPrice" fill="#f592ca" strokeType="OUTSIDE" strokeWidth="0.0" text="\$12.99" wrappingWidth="70.951171875">
+                  <Text fx:id="price" fill="#f592ca" strokeType="OUTSIDE" strokeWidth="0.0" text="\$12.99" wrappingWidth="70.951171875">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
@@ -49,7 +49,7 @@
       </VBox>
       <AnchorPane prefHeight="4.0" prefWidth="214.0">
          <children>
-            <Button fx:id="viewItemBtn" layoutX="5.0" layoutY="-334.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" opacity="0.0" prefHeight="311.0" prefWidth="193.0" snapToPixel="false" text="View Info" />
+            <Button fx:id="viewItem" layoutX="5.0" layoutY="-334.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" opacity="0.0" prefHeight="311.0" prefWidth="193.0" snapToPixel="false" text="View Info" />
          </children>
       </AnchorPane>
    </children>

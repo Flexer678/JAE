@@ -99,11 +99,17 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
     public void displayItems(List<String> items) throws IOException {
         item_view.getChildren().clear();
 
-        ItemController item1 = new ItemController();
-       
-        // VBox item2 = item1.getitemview("", "Alex", );
+   
         for (int i = 0; i < items.size(); i++) {
-            VBox box = FXMLLoader.load(getClass().getResource("../widgets/item.fxml"));
+                 ItemController item1 = new ItemController();
+       
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../widgets/item.fxml"));
+            VBox box =loader.load();
+
+            ItemController controller = loader.getController();
+            controller.set_data(items.get(i) );
+            
             String item = items.get(i);
             Label imageView = new Label(item);
 

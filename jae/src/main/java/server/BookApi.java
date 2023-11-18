@@ -10,19 +10,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Locale.Category;
+import java.util.concurrent.ThreadLocalRandom;
 
 import datamodel.Item_model;
 
-public class StoreApi {
+public class BookApi {
 
-    private static String url = "https://us-central1-fakestore-redirect.cloudfunctions.net/app/";
+    private String[] list = {"dart", "atomic bomb", "pyhton", "Java", "Cocaine"};
+
+    private static String url = "https://us-central1-readify-21f57.cloudfunctions.net/app2/";
+    
+    
     public static void main(String args[]) throws Exception {
-        get_products_by_category("men's%20clothing");
+        get_random();
   
     }
 
 
-    public static ArrayList<Item_model> get_all() throws IOException{
+    public static ArrayList<Item_model> get_random() throws IOException{
     
         URL link = new URL(url + "all");
 

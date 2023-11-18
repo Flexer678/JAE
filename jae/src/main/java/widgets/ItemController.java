@@ -10,33 +10,28 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
+
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
+
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Box;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class ItemController implements Initializable {
 
-    @FXML
-    ImageView image;
+  
 
     @FXML
-    Label name;
+    Text name;
 
     @FXML
-    Label price;
+    Text price;
 
-    @FXML
-    VBox itemview;
 
-    public void set_data(Item_model item) {
-        image.setImage(new Image(item.get_image_url()));
-        name.setText(item.get_name());
-        price.setText(item.get_price().toString());
+    public void set_data(String item) {
+       // image.setImage(new Image(item.get_image_url()));
+        name.setText(item);
+        //price.setText(item.get_price().toString());
     }
 
     @Override
