@@ -1,14 +1,17 @@
 package assets;
 
 
+import java.util.ArrayList;
+
 import datamodel.CartItem_model;
+import datamodel.Item_model;
 
 public class localFiles {
     public static String name = "";
 
 
     //where the db is stored
-    public ArrayList<CartItem_model> = new ArrayList<CartItem_model>();
+    ArrayList<CartItem_model> cartItems = new ArrayList<CartItem_model>();
 
 
     public static Boolean isSignIn = false;

@@ -10,46 +10,47 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="itemview" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="widgets.ItemController">
+
+<VBox fx:id="itemview" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="widgets.ItemController">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #e6e6e6; -fx-background-radius: 20px;">
+      <AnchorPane style="-fx-background-color: transparent;">
          <children>
-            <VBox fx:id="image" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="202.0" style="-fx-background-color: pink; -fx-border-radius: 20px; -fx-background-radius: 20px;">
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-background-radius: 20px;">
                <children>
-                  <ImageView fx:id="image" fitHeight="189.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/logo.png" />
-                     </image>
-                  </ImageView>
+                  <VBox fx:id="image" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="202.0" style="-fx-background-color: pink; -fx-border-radius: 20px; -fx-background-radius: 20px;">
+                     <children>
+                        <ImageView fx:id="image" fitHeight="265.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <Text fx:id="name" fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Strawberry" textAlignment="CENTER" wrappingWidth="125.693359375">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </HBox>
+                  <Button fx:id="addToCartBtn" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="35.0" prefWidth="202.0" style="-fx-background-color: black; -fx-background-radius: 50px;" text="Add to Cart" textFill="WHITE" VBox.vgrow="NEVER" />
                </children>
             </VBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox layoutX="20.0" layoutY="218.0" prefHeight="36.0" prefWidth="71.0" style="-fx-background-color: white;">
                <children>
-                  <Text fx:id="name" fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Strawberry" textAlignment="CENTER" wrappingWidth="125.693359375">
-                     <font>
-                        <Font name="System Bold" size="19.0" />
-                     </font>
-                  </Text>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Text fx:id="price" fill="#f592ca" strokeType="OUTSIDE" strokeWidth="0.0" text="\$12.99" wrappingWidth="70.951171875">
+                  <Text fx:id="price" fill="#ff3aaa" strokeType="OUTSIDE" strokeWidth="0.0" text="\$12.99" wrappingWidth="70.951171875">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Text>
                </children>
-               <padding>
-                  <Insets bottom="10.0" />
-               </padding>
             </HBox>
-            <Button fx:id="addToCartBtn" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="149.0" prefWidth="202.0" text="Add to Cart" VBox.vgrow="NEVER" />
-         </children>
-      </VBox>
-      <AnchorPane prefHeight="4.0" prefWidth="214.0">
-         <children>
-            <Button fx:id="viewItem" layoutX="5.0" layoutY="-334.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" opacity="0.0" prefHeight="311.0" prefWidth="193.0" snapToPixel="false" text="View Info" />
          </children>
       </AnchorPane>
    </children>
