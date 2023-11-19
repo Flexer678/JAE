@@ -2,15 +2,20 @@ package widgets;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import Pages.sceneController;
 import datamodel.Item_model;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import javafx.scene.layout.VBox;
@@ -19,18 +24,47 @@ import javafx.stage.Stage;
 
 public class ItemController implements Initializable {
 
-  
+    private String id;
+
+    
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @FXML
-    Text name;
+    Label name;
 
     @FXML
     Text price;
 
+    @FXML
+    Button addToCartBtn;
 
-    public void set_data(String item) {
+    @FXML
+    Button getDetailBtn;
+
+    @FXML
+    ImageView imageiIem;
+
+    @FXML
+    VBox itemview;
+
+    Item_model model;
+
+
+
+    public void set_data(Item_model item) {
+        model = item;
        // image.setImage(new Image(item.get_image_url()));
-        name.setText(item);
+        name.setText(item.title);
+        price.setText(Double.toString(item.price));
+        Image image3 = new Image(item.image);
+        imageiIem.setImage((image3));
         //price.setText(item.get_price().toString());
     }
 
@@ -40,10 +74,23 @@ public class ItemController implements Initializable {
 
     }
 
-    public void get_detail() {
+    public void get_detail(ActionEvent actionEvent) {
+        sceneController control = new sceneController();
+        try {
+            control.switchtoDetailPage(actionEvent, model);
+        } catch (IOException e) {
 
+            e.printStackTrace();
+        }
+        System.out.println(id);
+         System.out.println(model.title);
     }
 
+    public void add_to_cart(){
+        System.out.println(name.getText());
+        System.out.println("clicked");
+    }
+    
     public VBox getitemview(String image_, String name_, Double price_) {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("item.fxml"));
@@ -58,10 +105,7 @@ public class ItemController implements Initializable {
         ItemController controller = fxmlLoader.getController();
 
         Item_model model = new Item_model();
-        // model.setName(name);
-        // model.setPrice(12);
-        // model.setImage_url(image);
-        // controller.setdata(model);
+    
         System.out.println(name);
         return box;
 

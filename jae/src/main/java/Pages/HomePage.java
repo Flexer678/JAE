@@ -26,6 +26,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import server.BookApi;
+import server.StoreApi;
 import widgets.ItemController;
 import datamodel.*;
 import assets.localFiles;
@@ -42,6 +44,51 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
 
     @FXML
     FlowPane item_view;
+
+    private List<Item_model> datas (){
+        
+        List<Item_model> model =new ArrayList<>();
+        Item_model item1 = new Item_model();
+        item1.setDescription("This elegant dress is perfect for special occasions and formal events.");
+        item1.setImage("https://th.bing.com/th/id/R.a22db53d418d1d44de2cea8a5ffe8216?rik=GdEMJt4G2SVCAw&pid=ImgRaw&r=0");
+        item1.setId(0);
+        item1.setPrice(12.3);
+        item1.setTitle("Women's Evening Dress");
+        item1.setIsBook(false);
+        
+        Item_model item2 = new Item_model();
+        item2.setDescription(
+                "These high-performance running shoes provide excellent cushioning and support for your daily runs.");
+        item2.setImage("https://th.bing.com/th/id/R.a22db53d418d1d44de2cea8a5ffe8216?rik=GdEMJt4G2SVCAw&pid=ImgRaw&r=0");
+        item2.setId(0);
+        item2.setPrice(12.3);
+        item2.setTitle("Men's Running Shoes");
+        item2.setIsBook(false);
+
+
+        Item_model item3 = new Item_model();
+        item3.setDescription("Stay warm and stylish with this cozy knit sweater, perfect for the winter season.");
+        item3.setImage("https://th.bing.com/th/id/R.a22db53d418d1d44de2cea8a5ffe8216?rik=GdEMJt4G2SVCAw&pid=ImgRaw&r=0");
+        item3.setId(0);
+          item3.setPrice(12.3);
+        item3.setTitle("Women's Knit Sweater");
+        item3.setIsBook(false);
+
+        Item_model item4 = new Item_model();
+        item4.setDescription("Experience the ultimate gaming performance with this high-end gaming laptop.");
+        item4.setImage("https://th.bing.com/th/id/R.a22db53d418d1d44de2cea8a5ffe8216?rik=GdEMJt4G2SVCAw&pid=ImgRaw&r=0");
+        item4.setId(0);
+        item4.setPrice(12.3);
+        item4.setTitle("Gaming Laptop");
+        item4.setIsBook(false);
+
+
+        model.add(item1);
+        model.add(item2);
+        model.add(item3);
+        model.add(item4);
+        return model;
+    };
 
     List<String> food = new ArrayList<String>() {
         {
@@ -63,7 +110,7 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
         displayWelcome(localFiles.name);
 
         try {
-            displayItems(food);
+            displayItems(StoreApi.get_all());
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -92,11 +139,11 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
     }
     
     public void displayWelcome(String name) {
-        username.setText( name);
+        username.setText(name);
         username_profile.setText(name.substring(0, 1).toUpperCase());
     }
 
-    public void displayItems(List<String> items) throws IOException {
+    public void displayItems(List<Item_model> items) throws IOException {
         item_view.getChildren().clear();
 
    
@@ -108,17 +155,10 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
             VBox box =loader.load();
 
             ItemController controller = loader.getController();
-            controller.set_data(items.get(i) );
+            controller.setId(Integer.toString(items.get(i).getId()));
+            controller.set_data(items.get(i));
             
-            String item = items.get(i);
-            Label imageView = new Label(item);
-
             HBox hbox = new HBox(box);
-
-            hbox.setSpacing(10);
-            hbox.setPadding(new javafx.geometry.Insets(10));
-            // item_view.getChildren().add(item1.getitemview(item, items.get(i),
-            // Double.parseDouble(items.get(i))));
             item_view.getChildren().add(hbox);
         }
     }

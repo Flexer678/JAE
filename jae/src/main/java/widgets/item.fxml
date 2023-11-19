@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <VBox fx:id="itemview" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="widgets.ItemController">
    <children>
@@ -19,7 +19,7 @@
                <children>
                   <VBox fx:id="image" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="202.0" style="-fx-background-color: pink; -fx-border-radius: 20px; -fx-background-radius: 20px;">
                      <children>
-                        <ImageView fx:id="image" fitHeight="265.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imageiIem" fitHeight="265.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/logo.png" />
                            </image>
@@ -29,17 +29,17 @@
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <Text fx:id="name" fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Strawberry" textAlignment="CENTER" wrappingWidth="125.693359375">
+                        <Label fx:id="name" prefHeight="25.0" prefWidth="124.0" text="Strawberry" textAlignment="CENTER">
                            <font>
-                              <Font name="System Bold" size="19.0" />
+                              <Font name="System Bold" size="16.0" />
                            </font>
-                        </Text>
+                        </Label>
                      </children>
                      <padding>
                         <Insets bottom="10.0" />
                      </padding>
                   </HBox>
-                  <Button fx:id="addToCartBtn" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="35.0" prefWidth="202.0" style="-fx-background-color: black; -fx-background-radius: 50px;" text="Add to Cart" textFill="WHITE" VBox.vgrow="NEVER" />
+                  <Button fx:id="addToCartBtn" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#add_to_cart" prefHeight="35.0" prefWidth="202.0" style="-fx-background-color: black; -fx-background-radius: 50px;" text="Add to Cart" textFill="WHITE" VBox.vgrow="NEVER" />
                </children>
             </VBox>
             <HBox layoutX="20.0" layoutY="218.0" prefHeight="36.0" prefWidth="71.0" style="-fx-background-color: white;">
@@ -51,6 +51,7 @@
                   </Text>
                </children>
             </HBox>
+            <Button fx:id="getDetailBtn" mnemonicParsing="false" onAction="#get_detail" prefHeight="276.0" prefWidth="202.0" style="-fx-background-color: transparent;" />
          </children>
       </AnchorPane>
    </children>

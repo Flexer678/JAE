@@ -4,14 +4,74 @@ public class Item_model {
 
 
 
-    String title;
-    Double price;
-    String image;
+    public String title;
+    public Double price;
+    public String image;
     int id;
     String description;
     Boolean isBook;
 
-    Item_model(String title,String image , int id, double price, Boolean isBook,String description) {
+    public String getTitle() {
+        return title;
+}
+
+
+public void setTitle(String title) {
+        this.title = title;
+}
+
+
+public Double getPrice() {
+        return price;
+}
+
+
+public void setPrice(Double price) {
+        this.price = price;
+}
+
+
+public String getImage() {
+        return image;
+}
+
+
+public void setImage(String image) {
+        this.image = image;
+}
+
+
+public int getId() {
+        return id;
+}
+
+
+public void setId(int id) {
+        this.id = id;
+}
+
+
+public String getDescription() {
+        return description;
+}
+
+
+public void setDescription(String description) {
+        this.description = description;
+}
+
+
+public Boolean getIsBook() {
+        return isBook;
+}
+
+
+public void setIsBook(Boolean isBook) {
+        this.isBook = isBook;
+}
+
+
+Item_model(String title,String image , int id, double price, Boolean isBook,String description) {
         this.title = title;
         this.price = price;
         this.image = image;
@@ -27,7 +87,16 @@ public class Item_model {
     }
 
 
-    //converts stored data to type Item_model for the itemController
+    public static Item_model set_data(String title,String image , int id, double price, Boolean isBook,String description){
+        Item_model newData = new Item_model(title,image,id,price, true,description );
+        return newData;
+    }
+
+   
+
+
+
+//converts stored data to type Item_model for the itemController
     public static Item_model store_to_map(String roughData) {
         //rough data comes in string.
 

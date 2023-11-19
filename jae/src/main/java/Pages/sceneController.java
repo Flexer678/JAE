@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.lang.ModuleLayer.Controller;
 
 import assets.localFiles;
+import datamodel.Item_model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -16,8 +17,12 @@ public class sceneController {
     private Scene scene;
     private Parent root;
 
-    public void switchtoDetailPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("detailPage.fxml"));
+    public void switchtoDetailPage(ActionEvent event, Item_model model) throws IOException {
+
+        FXMLLoader loader = new  FXMLLoader(getClass().getResource("detailPage.fxml"));
+        root =loader.load();
+        DetailPage page = loader.getController();
+        page.display_detail(model);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

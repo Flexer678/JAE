@@ -13,8 +13,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="935.0" prefWidth="1500.0" style="-fx-background-color: linear-gradient(to top,black 2%, #fceee5 90% );" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Pages.SignInPage">
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="935.0" prefWidth="1500.0" style="-fx-background-color: linear-gradient(to top,grey, #fceee5 60% );" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Pages.DetailPage">
    <children>
       <HBox id="Nav-bar" alignment="CENTER_LEFT" fillHeight="false" layoutX="-4.0" layoutY="-2.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="128.0" prefWidth="1507.0" style="-fx-background-color: linear-gradient(to right, #fceee5, white 50%);">
          <children>
@@ -60,14 +61,18 @@
             </VBox>
          </children>
       </HBox>
-      <ImageView fitHeight="598.0" fitWidth="582.0" layoutX="85.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/placeholder.png" />
-         </image>
-      </ImageView>
+      <HBox alignment="CENTER" layoutX="29.0" layoutY="221.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: white;">
+         <children>
+            <ImageView fx:id="imageItem" fitHeight="702.0" fitWidth="724.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/placeholder.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
       <VBox layoutX="769.0" layoutY="130.0" prefHeight="800.0" prefWidth="717.0" style="-fx-background-color: white;">
          <children>
-            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="68.0" prefWidth="168.0" style="-fx-background-color: transparent;" text="&lt; Back">
+            <Button fx:id="back" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#back_to_homepage" prefHeight="68.0" prefWidth="168.0" style="-fx-background-color: transparent;" text="&lt; Back">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -75,34 +80,35 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Label prefHeight="139.0" prefWidth="649.0" text="TITLE">
+            <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="TTILE" wrappingWidth="629.6884765625">
                <font>
-                  <Font size="56.0" />
+                  <Font size="51.0" />
                </font>
-            </Label>
-            <Label layoutX="60.0" layoutY="128.0" prefHeight="57.0" prefWidth="450.0" text="price">
+            </Text>
+            <Label fx:id="price" layoutX="60.0" layoutY="128.0" prefHeight="57.0" prefWidth="450.0" text="price">
                <font>
                   <Font size="34.0" />
                </font>
             </Label>
-            <Label layoutX="60.0" layoutY="269.0" prefHeight="114.0" prefWidth="669.0" text="Description">
+            <Text fx:id="description" strokeType="OUTSIDE" strokeWidth="0.0" text="ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhuuuuuuuuuuuuiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" wrappingWidth="633.150390625">
                <font>
-                  <Font size="22.0" />
+                  <Font size="21.0" />
                </font>
-               <VBox.margin>
-                  <Insets top="50.0" />
-               </VBox.margin>
-            </Label>
+            </Text>
             <Label text="Similar items">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <ScrollPane prefHeight="276.0" prefWidth="617.0" style="-fx-background-color: transparent;">
-               <content>
-                  <FlowPane prefHeight="257.0" prefWidth="647.0" style="-fx-background-color: white;" />
-               </content>
-            </ScrollPane>
+            <AnchorPane prefHeight="372.0" prefWidth="634.0">
+               <children>
+                  <ScrollPane prefHeight="370.0" prefWidth="651.0" style="-fx-background-color: transparent;">
+                     <content>
+                        <FlowPane fx:id="similarItems" prefHeight="347.0" prefWidth="659.0" style="-fx-background-color: white;" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
          </children>
          <padding>
             <Insets left="50.0" right="50.0" top="50.0" />
