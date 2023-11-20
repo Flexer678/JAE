@@ -28,6 +28,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import server.BookApi;
 import server.StoreApi;
+import widgets.CategoryBtnCntroller;
 import widgets.ItemController;
 import datamodel.*;
 import assets.localFiles;
@@ -45,7 +46,126 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
     @FXML
     FlowPane item_view;
 
-    private List<Item_model> datas (){
+    @FXML
+    FlowPane categoryList;
+
+  
+    List<String> food = new ArrayList<String>() {
+        {
+            add("Apple");
+            add("Banana");
+            add("Cherry");
+            add("Grapes");
+            add("Mango");
+            add("Orange");
+            add("Pineapple");
+            add("Strawberry");
+            add("Watermelon");
+        }
+    };
+
+    @Override
+    public void initialize(URL url, ResourceBundle arg1) {
+        System.out.println(localFiles.getName()+ "\n");
+        displayWelcome(localFiles.name);
+
+        try {
+            displayItems(StoreApi.get_all());
+            displayCategories(StoreApi.get_categories());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+      
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("JAE store");
+        primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
+    
+
+    @Override
+    public void handle(ActionEvent actionEvent) {
+
+        // TODO Auto-generated method stub
+
+    }
+    
+
+    //shows name in the navigationbar
+    public void displayWelcome(String name) {
+        username.setText(name);
+        
+        try {
+            username_profile.setText(name.substring(0, 1).toUpperCase());
+        } catch (Exception e) {
+           username_profile.setText("T");
+        }
+    }
+
+
+
+
+        private void displayCategories(List<String> categories) throws IOException {
+        categoryList.getChildren().clear();
+
+   
+        for (int i = 0; i < categories.size(); i++) {
+            ItemController item1 = new ItemController();
+       
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../widgets/categoryBtn.fxml"));
+            AnchorPane box =loader.load();
+
+            CategoryBtnCntroller controller = loader.getController();
+            controller.set_category(categories.get(i));
+            
+            HBox hbox = new HBox(box);
+            categoryList.getChildren().add(hbox);
+        }
+    }
+
+    
+    //
+    private void displayItems(List<Item_model> items) throws IOException {
+        item_view.getChildren().clear();
+        for (int i = 0; i < items.size(); i++) {
+            FXMLLoader loader = new FXMLLoader();
+
+            //loads the items  multiple times and sets them to a controller so that the 
+            // data can be entered
+            loader.setLocation(getClass().getResource("../widgets/item.fxml"));
+            VBox box =loader.load();
+            ItemController controller = loader.getController();
+            controller.setId(Integer.toString(items.get(i).getId()));
+            controller.set_data(items.get(i));
+            HBox hbox = new HBox(box);
+
+            //adds it to the flow pane
+            item_view.getChildren().add(hbox);
+        }
+    }
+
+
+
+    public void run(String[] args) {
+        launch(args);
+    }
+
+   
+}
+
+
+/*
+ *   private List<Item_model> datas (){
         
         List<Item_model> model =new ArrayList<>();
         Item_model item1 = new Item_model();
@@ -90,84 +210,4 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
         return model;
     };
 
-    List<String> food = new ArrayList<String>() {
-        {
-            add("Apple");
-            add("Banana");
-            add("Cherry");
-            add("Grapes");
-            add("Mango");
-            add("Orange");
-            add("Pineapple");
-            add("Strawberry");
-            add("Watermelon");
-        }
-    };
-
-    @Override
-    public void initialize(URL url, ResourceBundle arg1) {
-        System.out.println(localFiles.getName()+ "\n");
-        displayWelcome(localFiles.name);
-
-        try {
-            displayItems(StoreApi.get_all());
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        
-      
-    }
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("JAE store");
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
-        primaryStage.show();
-    }
-    
-
-    @Override
-    public void handle(ActionEvent actionEvent) {
-
-        // TODO Auto-generated method stub
-
-    }
-    
-    public void displayWelcome(String name) {
-        username.setText(name);
-        username_profile.setText(name.substring(0, 1).toUpperCase());
-    }
-
-    public void displayItems(List<Item_model> items) throws IOException {
-        item_view.getChildren().clear();
-
-   
-        for (int i = 0; i < items.size(); i++) {
-                 ItemController item1 = new ItemController();
-       
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../widgets/item.fxml"));
-            VBox box =loader.load();
-
-            ItemController controller = loader.getController();
-            controller.setId(Integer.toString(items.get(i).getId()));
-            controller.set_data(items.get(i));
-            
-            HBox hbox = new HBox(box);
-            item_view.getChildren().add(hbox);
-        }
-    }
-
-
-
-    public void run(String[] args) {
-        launch(args);
-    }
-
-   
-}
+ */

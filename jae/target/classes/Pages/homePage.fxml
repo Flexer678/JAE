@@ -484,7 +484,7 @@
       </ScrollPane>
       <HBox alignment="CENTER" layoutX="29.0" layoutY="163.0" prefHeight="807.0" prefWidth="86.0" style="-fx-background-color: FFA5EB; -fx-background-radius: 50px;">
          <children>
-            <FlowPane columnHalignment="CENTER" prefHeight="757.0" prefWidth="80.0" vgap="30.0">
+            <FlowPane fx:id="categoryList" columnHalignment="CENTER" prefHeight="757.0" prefWidth="80.0" vgap="30.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="159.0" prefWidth="74.0" style="-fx-background-color: black; -fx-background-radius: 30PX;">
                      <children>

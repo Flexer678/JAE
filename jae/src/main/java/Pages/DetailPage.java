@@ -35,6 +35,7 @@ public class DetailPage {
         name.setText(names);
     }
 
+    //this displays the details of the item in a new page and is called by the item_controller.java file
     public void display_detail(Item_model model) {
         name.setText(model.getTitle());
         description.setText(model.getDescription());
@@ -43,6 +44,7 @@ public class DetailPage {
         imageItem.setImage((image3));
     }
 
+    //his handles the back button
     public void back_to_homepage(ActionEvent event) throws IOException{
         sceneController controller = new sceneController();
         controller.switchtoMainPage(event, localFiles.name);

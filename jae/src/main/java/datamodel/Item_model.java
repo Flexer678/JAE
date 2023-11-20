@@ -1,5 +1,8 @@
 package datamodel;
 
+
+//this class is used to store all the information about the item
+//we use the id to search for the item in the api database
 public class Item_model {
 
 
@@ -71,6 +74,9 @@ public void setIsBook(Boolean isBook) {
 }
 
 
+
+//this constructor is for setting the different item models
+//we take the api and use this to convert it 
 Item_model(String title,String image , int id, double price, Boolean isBook,String description) {
         this.title = title;
         this.price = price;
@@ -104,6 +110,8 @@ Item_model(String title,String image , int id, double price, Boolean isBook,Stri
         Double price = 0.0;
         String image = "", description = "", category = "", name = "";
         int id = 0;
+
+        //this converts the string into individual item variables
         try {
             name = roughData.substring(roughData.indexOf("\"title\":") + 9,
                     roughData.indexOf("\",\"", roughData.indexOf("\"title\":") + 9));
@@ -120,6 +128,7 @@ Item_model(String title,String image , int id, double price, Boolean isBook,Stri
         } catch (Exception e) {
             System.out.println("somethign went wrong");
         }
+        //this converts the item variables into item model
         Item_model newData = new Item_model(name,image,id,price, false,description );
         System.out.println(newData.title);
         System.out.println(newData.price);

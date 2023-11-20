@@ -6,17 +6,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="widgets.CategoryBtnCntroller">
+<AnchorPane prefHeight="145.0" prefWidth="67.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="widgets.CategoryBtnCntroller">
    <children>
-      <HBox alignment="CENTER" prefHeight="159.0" prefWidth="76.0" style="-fx-background-color: black; -fx-background-radius: 30PX;">
+      <HBox alignment="CENTER" prefHeight="145.0" prefWidth="67.0" style="-fx-background-color: black; -fx-background-radius: 30PX;">
          <children>
-            <Label fx:id="name" prefHeight="54.0" prefWidth="174.0" rotate="90.0" text="MENS" textFill="WHITE">
+            <Label fx:id="name" prefHeight="54.0" prefWidth="87.0" rotate="90.0" style="-fx-alignment: center;" text="MENS" textAlignment="RIGHT" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="25.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <Button fx:id="getCategoryBtn" mnemonicParsing="false" onAction="#get_category" prefHeight="159.0" prefWidth="76.0" style="-fx-background-color: transparent;" text="Button" />
+      <Button fx:id="getCategoryBtn" mnemonicParsing="false" onAction="#get_category" prefHeight="145.0" prefWidth="67.0" style="-fx-background-color: transparent;" text="Button" />
    </children>
 </AnchorPane>

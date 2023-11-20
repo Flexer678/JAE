@@ -17,7 +17,7 @@ public class StoreApi {
 
     private static String url = "https://us-central1-fakestore-redirect.cloudfunctions.net/app/";
     public static void main(String args[]) throws Exception {
-        get_products_by_category("men's%20clothing");
+        System.out.println(get_categories());
   
     }
 
@@ -58,7 +58,7 @@ public class StoreApi {
         }
         
     }
-        public static ArrayList<String> get_category(int id) throws IOException{
+        public static ArrayList<String> get_categories() throws IOException{
     
         URL link = new URL(url + "categories"  );
 
@@ -97,11 +97,13 @@ public class StoreApi {
        
             returnData.add(s);
         }
+             return returnData;
             
         } else {
             //return null;
         }
         return null;
+   
         
     }
      public static ArrayList<Item_model>  get_products_by_category(String categ) throws IOException{

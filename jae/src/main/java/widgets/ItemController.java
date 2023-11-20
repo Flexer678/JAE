@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import Pages.sceneController;
+import assets.localFiles;
 import datamodel.Item_model;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -88,6 +89,7 @@ public class ItemController implements Initializable {
 
     public void add_to_cart(){
         System.out.println(name.getText());
+        //localFiles.add_to_cart();
         System.out.println("clicked");
     }
     

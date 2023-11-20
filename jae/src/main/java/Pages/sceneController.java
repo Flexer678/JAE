@@ -17,6 +17,8 @@ public class sceneController {
     private Scene scene;
     private Parent root;
 
+
+    //
     public void switchtoDetailPage(ActionEvent event, Item_model model) throws IOException {
 
         FXMLLoader loader = new  FXMLLoader(getClass().getResource("detailPage.fxml"));
@@ -29,6 +31,8 @@ public class sceneController {
         stage.show();
 
     }
+
+
 
     public void switchtoMainPage(ActionEvent event, String name) throws IOException {
         FXMLLoader loader = new  FXMLLoader(getClass().getResource("homePage.fxml"));
@@ -59,6 +63,14 @@ public class sceneController {
 
     }
 
+
+    public void switchToSearchPage(ActionEvent event, String name, Boolean isCategory) throws IOException {
+          root = FXMLLoader.load(getClass().getResource("searchPage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     public void passdata() {
 
     }

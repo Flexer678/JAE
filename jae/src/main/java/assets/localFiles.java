@@ -4,14 +4,22 @@ package assets;
 import java.util.ArrayList;
 
 import datamodel.CartItem_model;
-import datamodel.Item_model;
 
 public class localFiles {
+
+    //name of the user
     public static String name = "";
 
 
     //where the db is stored
-    ArrayList<CartItem_model> cartItems = new ArrayList<CartItem_model>();
+    static ArrayList<CartItem_model> cartItems = new ArrayList<CartItem_model>();
+
+    
+
+
+    public ArrayList<CartItem_model> getCartItems() {
+        return cartItems;
+    }
 
 
     public static Boolean isSignIn = false;
@@ -22,5 +30,11 @@ public class localFiles {
 
     public static void set_name(String name) {
         localFiles.name = name;
+    }
+
+    //adds to where the db is stored
+    public static void add_to_cart(CartItem_model model){
+        cartItems.add(model);
+
     }
 }

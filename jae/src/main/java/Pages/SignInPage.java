@@ -78,10 +78,16 @@ public class SignInPage extends Application implements EventHandler<ActionEvent>
     }
 
 
+    
+    //handles the signin options
     public void signIn(ActionEvent actionEvent) {
         String name = username.getText();
+        String passwd = password.getText();
 
+
+        //gives the name to localfiles which initilized name as the username input and can be used as long as you want
         localFiles.set_name(name);
+        
         sceneController control = new sceneController();
         try {
             control.switchtoMainPage(actionEvent, name);
