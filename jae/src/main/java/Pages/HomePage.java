@@ -145,7 +145,7 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
             loader.setLocation(getClass().getResource("../widgets/item.fxml"));
             VBox box =loader.load();
             ItemController controller = loader.getController();
-            controller.setId(Integer.toString(items.get(i).getId()));
+            controller.setId(items.get(i).getId());
             controller.set_data(items.get(i));
             HBox hbox = new HBox(box);
 

@@ -10,9 +10,10 @@ public class Item_model {
     public String title;
     public Double price;
     public String image;
-    int id;
+    public static String id;
     String description;
     Boolean isBook;
+    String bookId;
 
     public String getTitle() {
         return title;
@@ -44,12 +45,12 @@ public void setImage(String image) {
 }
 
 
-public int getId() {
+public String getId() {
         return id;
 }
 
 
-public void setId(int id) {
+public void setId(String id) {
         this.id = id;
 }
 
@@ -77,7 +78,7 @@ public void setIsBook(Boolean isBook) {
 
 //this constructor is for setting the different item models
 //we take the api and use this to convert it 
-Item_model(String title,String image , int id, double price, Boolean isBook,String description) {
+Item_model(String title,String image , String id, double price, Boolean isBook,String description) {
         this.title = title;
         this.price = price;
         this.image = image;
@@ -89,11 +90,13 @@ Item_model(String title,String image , int id, double price, Boolean isBook,Stri
     }
 
 
+
+
     public Item_model() {
     }
 
 
-    public static Item_model set_data(String title,String image , int id, double price, Boolean isBook,String description){
+    public static Item_model set_data(String title,String image , String id, double price, Boolean isBook,String description){
         Item_model newData = new Item_model(title,image,id,price, true,description );
         return newData;
     }
@@ -108,8 +111,7 @@ Item_model(String title,String image , int id, double price, Boolean isBook,Stri
 
         //initializes them in case of later exception
         Double price = 0.0;
-        String image = "", description = "", category = "", name = "";
-        int id = 0;
+        String image = "", description = "", name = "", id = "0";
 
         //this converts the string into individual item variables
         try {
@@ -118,12 +120,10 @@ Item_model(String title,String image , int id, double price, Boolean isBook,Stri
             price = Double.parseDouble(roughData.substring((roughData.indexOf("\"price\":")) + 8,
                     roughData.indexOf("\"description\":") - 1));
             image = roughData.substring((roughData.indexOf("\"image\":")) + 9, roughData.indexOf("\"rating\":") - 2);
-            id = Integer.parseInt(
-                    roughData.substring((roughData.indexOf("\"id\":")) + 5, roughData.indexOf("\"title\":") - 1));
+            id =roughData.substring((roughData.indexOf("\"id\":")) + 5, roughData.indexOf("\"title\":") - 1);
             description = roughData.substring((roughData.indexOf("\"description\":")) + 15,
                     roughData.indexOf("\"category\":") - 2);
-            category = roughData.substring((roughData.indexOf("\"category\":")) + 12,
-                    roughData.indexOf("\"image\":") - 2);
+          
 
         } catch (Exception e) {
             System.out.println("somethign went wrong");
@@ -143,23 +143,17 @@ Item_model(String title,String image , int id, double price, Boolean isBook,Stri
 
     public static Item_model book_to_map(String roughData) {
         //rough data comes in string.
-
+        System.out.println(roughData);
         //initializes them in case of later exception
         Double price = 0.0;
-        String image = "", description = "", category = "", name = "";
-        int id = 0;
+        String image = "", description = "n/a", name = "";id = "0";
         try {
             name = roughData.substring(roughData.indexOf("\"title\":") + 9,
                     roughData.indexOf("\",\"", roughData.indexOf("\"title\":") + 9));
-            price = Double.parseDouble(roughData.substring((roughData.indexOf("\"price\":")) + 8,
-                    roughData.indexOf("\"description\":") - 1));
-            image = roughData.substring((roughData.indexOf("\"image\":")) + 9, roughData.indexOf("\"rating\":") - 2);
-            id = Integer.parseInt(
-                    roughData.substring((roughData.indexOf("\"id\":")) + 5, roughData.indexOf("\"title\":") - 1));
-            description = roughData.substring((roughData.indexOf("\"description\":")) + 15,
-                    roughData.indexOf("\"category\":") - 2);
-            category = roughData.substring((roughData.indexOf("\"category\":")) + 12,
-                    roughData.indexOf("\"image\":") - 2);
+            price = 12.99;
+        image = roughData.substring((roughData.indexOf("\"img\":")) + 7, roughData.indexOf("\"url_number\":")-2);
+                id = roughData.substring((roughData.indexOf("\"url_number\":")) + 15,roughData.length()-2 );
+          
 
         } catch (Exception e) {
             System.out.println("somethign went wrong");
