@@ -171,5 +171,35 @@ Item_model(String title,String image , String id, double price, Boolean isBook,S
     }
 
 
+public static Item_model book_to_map_details(String roughData) {
+      //rough data comes in string.
+        System.out.println(roughData);
+        //initializes them in case of later exception
+        Double price = 0.0;
+        String image = "", description = "n/a", name = "";id = "0";
+        try {
+            name = roughData.substring(roughData.indexOf("\"title\":") + 9,
+                    roughData.indexOf("\",\"", roughData.indexOf("\"title\":") + 9));
+        price = 12.99;
+        image = roughData.substring((roughData.indexOf("\"image\":")) + 9, roughData.indexOf("\"pages\":")-2);
+        id = roughData.substring((roughData.indexOf("\"id\":")) + 6,roughData.indexOf("\"},") );
+        description = roughData.substring(roughData.indexOf("\"details\"")+ 11, roughData.indexOf("\"image\"")-2);
+
+        } catch (Exception e) {
+            System.out.println("somethign went wrong");
+        }
+        Item_model newData = new Item_model(name,image,id,price, true,description );
+        System.out.println(newData.title);
+        System.out.println(newData.price);
+        System.out.println(newData.image);
+        System.out.println(newData.id);
+        System.out.println(newData.description);
+
+        System.out.println("\n");
+
+        return newData;
+}
+
+
 
 }

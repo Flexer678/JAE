@@ -146,9 +146,9 @@ public class StoreApi {
     }
    
     
-    public static Item_model get_product_by_id(int id) throws IOException{
+    public static Item_model get_product_by_id(String id) throws IOException{
     
-        URL link = new URL(url + "product/"+  Integer.toString(id));
+        URL link = new URL(url + "product/"+id);
 
         // Creating an HTTP connection
         HttpURLConnection MyConn = (HttpURLConnection) link.openConnection();

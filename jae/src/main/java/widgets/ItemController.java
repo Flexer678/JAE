@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 public class ItemController implements Initializable {
 
     private String id;
-
+    private Boolean isBook;
     
 
     public String getId() {
@@ -61,6 +61,7 @@ public class ItemController implements Initializable {
 
     public void set_data(Item_model item) {
         model = item;
+        isBook = item.getIsBook();
        // image.setImage(new Image(item.get_image_url()));
         name.setText(item.title);
         price.setText(Double.toString(item.price));
@@ -78,7 +79,8 @@ public class ItemController implements Initializable {
     public void get_detail(ActionEvent actionEvent) {
         sceneController control = new sceneController();
         try {
-            control.switchtoDetailPage(actionEvent, model);
+              control.switchtoDetailPage(actionEvent, model, isBook);
+          
         } catch (IOException e) {
 
             e.printStackTrace();

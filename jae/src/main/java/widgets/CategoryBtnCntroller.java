@@ -38,7 +38,7 @@ public class CategoryBtnCntroller implements Initializable, EventHandler<ActionE
 
     public void get_category(ActionEvent event) throws IOException{
         sceneController control = new sceneController();
-        control.switchToSearchPage(event, categoryName, false);
+        control.switchToSearchPage(event, categoryName);
         System.out.println(name.getText());
         
     }

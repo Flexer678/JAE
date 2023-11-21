@@ -19,12 +19,12 @@ public class sceneController {
 
 
     //
-    public void switchtoDetailPage(ActionEvent event, Item_model model) throws IOException {
+    public void switchtoDetailPage(ActionEvent event, Item_model model, boolean isBook) throws IOException {
 
         FXMLLoader loader = new  FXMLLoader(getClass().getResource("detailPage.fxml"));
         root =loader.load();
         DetailPage page = loader.getController();
-        page.display_detail(model);
+        page.display_detail(model, isBook);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -64,7 +64,7 @@ public class sceneController {
     }
 
 
-    public void switchToSearchPage(ActionEvent event, String name, Boolean isCategory) throws IOException {
+    public void switchToSearchPage(ActionEvent event, String name) throws IOException {
           root = FXMLLoader.load(getClass().getResource("searchPage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

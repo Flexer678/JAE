@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import server.BookApi;
 
 public class DetailPage {
     @FXML
@@ -36,12 +37,22 @@ public class DetailPage {
     }
 
     //this displays the details of the item in a new page and is called by the item_controller.java file
-    public void display_detail(Item_model model) {
-        name.setText(model.getTitle());
+    public void display_detail(Item_model model,Boolean isBook) throws IOException {
+       if (isBook) {
+        model = BookApi.get_product_details_by_id(model.getId());
+            name.setText(model.getTitle());
         description.setText(model.getDescription());
         price.setText(Double.toString(model.getPrice()));
         Image image3 = new Image(model.image);
         imageItem.setImage((image3));
+        
+       }else{
+         name.setText(model.getTitle());
+        description.setText(model.getDescription());
+        price.setText(Double.toString(model.getPrice()));
+        Image image3 = new Image(model.image);
+        imageItem.setImage((image3));
+       }
     }
 
     //his handles the back button
