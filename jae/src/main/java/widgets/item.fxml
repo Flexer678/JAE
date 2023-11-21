@@ -26,14 +26,22 @@
                         </ImageView>
                      </children>
                   </VBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <Label fx:id="name" prefHeight="25.0" prefWidth="124.0" text="Strawberry" textAlignment="CENTER">
+                        <Label fx:id="name" prefHeight="25.0" prefWidth="110.0" text="Strawberry" textAlignment="CENTER">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
+                        <HBox prefHeight="36.0" prefWidth="71.0" style="-fx-background-color: white;">
+                           <children>
+                              <Text fx:id="price" fill="#ff3aaa" strokeType="OUTSIDE" strokeWidth="0.0" text="\$12.99" wrappingWidth="70.951171875">
+                                 <font>
+                                    <Font name="System Bold" size="21.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
                      </children>
                      <padding>
                         <Insets bottom="10.0" />
@@ -42,15 +50,6 @@
                   <Button fx:id="addToCartBtn" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#add_to_cart" prefHeight="35.0" prefWidth="202.0" style="-fx-background-color: black; -fx-background-radius: 50px;" text="Add to Cart" textFill="WHITE" VBox.vgrow="NEVER" />
                </children>
             </VBox>
-            <HBox layoutX="20.0" layoutY="218.0" prefHeight="36.0" prefWidth="71.0" style="-fx-background-color: white;">
-               <children>
-                  <Text fx:id="price" fill="#ff3aaa" strokeType="OUTSIDE" strokeWidth="0.0" text="\$12.99" wrappingWidth="70.951171875">
-                     <font>
-                        <Font name="System Bold" size="21.0" />
-                     </font>
-                  </Text>
-               </children>
-            </HBox>
             <Button fx:id="getDetailBtn" mnemonicParsing="false" onAction="#get_detail" prefHeight="276.0" prefWidth="202.0" style="-fx-background-color: transparent;" />
          </children>
       </AnchorPane>
