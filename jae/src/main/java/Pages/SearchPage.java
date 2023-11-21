@@ -14,5 +14,11 @@ public class SearchPage implements Initializable,  EventHandler<ActionEvent> {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'initialize'");
     }
+
+    @Override
+    public void handle(ActionEvent event) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handle'");
+    }
     
 }
