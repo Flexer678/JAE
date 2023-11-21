@@ -70,7 +70,7 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
         displayWelcome(localFiles.name);
 
         try {
-            displayItems(BookApi.get_random_books());
+            displayItems(StoreApi.get_all());
             displayCategories(StoreApi.get_categories());
         } catch (IOException e) {
             // TODO Auto-generated catch block
