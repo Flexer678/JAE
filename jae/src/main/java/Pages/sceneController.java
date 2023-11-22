@@ -65,7 +65,10 @@ public class sceneController {
 
 
     public void switchToSearchPage(ActionEvent event, String name) throws IOException {
-          root = FXMLLoader.load(getClass().getResource("searchPage.fxml"));
+       FXMLLoader loader = new  FXMLLoader(getClass().getResource("searchPage.fxml"));
+        root =loader.load();
+        SearchPage page = loader.getController();
+        //page.displayWelcome(name);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

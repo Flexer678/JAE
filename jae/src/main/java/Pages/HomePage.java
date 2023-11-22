@@ -42,6 +42,8 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
     @FXML
     Label username_profile;
 
+    @FXML
+    FlowPane featured_items;
 
     @FXML
     FlowPane item_view;
@@ -70,8 +72,9 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
         displayWelcome(localFiles.name);
 
         try {
-            displayItems(BookApi.get_random_books());
+            displayItems(StoreApi.get_all());
             displayCategories(StoreApi.get_categories());
+            display_featured_items(StoreApi.get_all());
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -99,6 +102,25 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
 
     }
     
+
+    public void display_featured_items(List<Item_model> items) throws IOException{
+        featured_items.getChildren().clear();
+        for (int i = 0; i < 3; i++){
+             FXMLLoader loader = new FXMLLoader();
+
+            //loads the items  multiple times and sets them to a controller so that the 
+            // data can be entered
+            loader.setLocation(getClass().getResource("../widgets/item.fxml"));
+            VBox box =loader.load();
+            ItemController controller = loader.getController();
+            controller.setId(items.get(i).getId());
+            controller.set_data(items.get(i));
+            HBox hbox = new HBox(box);
+
+            //adds it to the flow pane
+            featured_items.getChildren().add(hbox);
+        }
+    }
 
     //shows name in the navigationbar
     public void displayWelcome(String name) {
@@ -137,7 +159,7 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
     //
     private void displayItems(List<Item_model> items) throws IOException {
         item_view.getChildren().clear();
-        for (int i = 0; i < items.size(); i++) {
+        for (int i = 0; i < items.size()-10; i++) {
             FXMLLoader loader = new FXMLLoader();
 
             //loads the items  multiple times and sets them to a controller so that the 

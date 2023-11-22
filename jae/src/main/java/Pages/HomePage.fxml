@@ -72,27 +72,27 @@
                         </VBox>
                         <VBox layoutX="552.0" layoutY="46.0" prefHeight="280.0" prefWidth="596.0">
                            <children>
-                              <Label prefHeight="77.0" prefWidth="596.0" text="TITLE">
+                              <Label prefHeight="77.0" prefWidth="596.0" text="Miraculus Honey">
                                  <font>
                                     <Font name="System Bold" size="53.0" />
                                  </font>
-                              </Label>
-                              <Label layoutX="10.0" layoutY="111.0" prefHeight="135.0" prefWidth="596.0" text="Description">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
                                  <VBox.margin>
-                                    <Insets top="50.0" />
+                                    <Insets bottom="30.0" />
                                  </VBox.margin>
                               </Label>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="the thing every one loves!!!, Honey. this honey has supernatural powers and can give you super powers. Best of all, you get supernatural coding powers where you understand every single code, even binary" wrappingWidth="606.07421875">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Text>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Label prefHeight="55.0" prefWidth="438.0" text="price">
+                                    <Label prefHeight="55.0" prefWidth="438.0" text="price: $40.99">
                                        <font>
-                                          <Font size="27.0" />
+                                          <Font size="31.0" />
                                        </font>
                                     </Label>
-                                    <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color: black; -fx-background-radius: 40;" text="BUY" textFill="WHITE">
+                                    <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color: black; -fx-background-radius: 40;" text="SOLD OUT" textFill="WHITE" underline="true">
                                        <font>
                                           <Font size="22.0" />
                                        </font>
@@ -379,7 +379,7 @@
                         </Text>
                         <HBox layoutX="546.0" layoutY="441.0" prefHeight="393.0" prefWidth="816.0">
                            <children>
-                              <FlowPane hgap="50.0" orientation="VERTICAL" prefHeight="393.0" prefWidth="920.0">
+                              <FlowPane fx:id="featured_items" hgap="50.0" orientation="VERTICAL" prefHeight="393.0" prefWidth="920.0">
                                  <children>
                                     <VBox fx:id="itemview41" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-width: 5px;">
                                        <children>
