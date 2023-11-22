@@ -1,6 +1,8 @@
 package Pages;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import assets.localFiles;
 import datamodel.CartItem_model;
@@ -9,18 +11,22 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import server.BookApi;
+import widgets.navbarController;
 
-public class DetailPage  {
+public class DetailPage implements Initializable {
     @FXML
     Text name, description; 
     
@@ -29,6 +35,9 @@ public class DetailPage  {
 
     @FXML
     ImageView imageItem;
+
+    @FXML
+    HBox navholder;
 
     @FXML
     FlowPane similarItems;
@@ -68,4 +77,23 @@ public class DetailPage  {
         controller.switchtoMainPage(event, localFiles.name);
     }
 
+        public void display_navholder() throws IOException{
+        navholder.getChildren().clear();
+         FXMLLoader loader = new FXMLLoader();
+
+
+            loader.setLocation(getClass().getResource("../widgets/navbar.fxml"));
+            AnchorPane box =loader.load();
+            navbarController controller = loader.getController();
+            navholder.getChildren().add(box);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        try {
+            display_navholder();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

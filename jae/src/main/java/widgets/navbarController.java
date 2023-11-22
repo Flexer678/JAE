@@ -2,6 +2,7 @@ package widgets;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import Pages.sceneController;
@@ -22,6 +23,9 @@ public class navbarController implements EventHandler<ActionEvent>, Initializabl
 
     @FXML
     private Label username_profile;
+
+    @FXML
+    private Label tryAgain;
 
     @FXML
     private TextField searchName;
@@ -48,9 +52,9 @@ public class navbarController implements EventHandler<ActionEvent>, Initializabl
 
     public void get_search_results(ActionEvent event) throws IOException{
         System.out.println("running");
-        if (searchName.getText() == " " || searchName.getText().length() <= 3) {
-            username_profile.setText("Please enter a valid search term");
-        }else{
+        if (Objects.equals(searchName.getText(), " ") || searchName.getText().length() <= 3) {
+            tryAgain.setText("Please enter a valid search term.");
+        } else {
             sceneController controller = new sceneController();
             controller.switchToSearchPage(event, searchName.getText(), sceneController.types[0]);
         }
@@ -63,7 +67,7 @@ public class navbarController implements EventHandler<ActionEvent>, Initializabl
     
     public void go_back_hpage(ActionEvent event) throws IOException{
        sceneController controller = new sceneController();
-        controller.switchtoMainPage(event, localFiles.getName());
+       controller.switchtoMainPage(event, localFiles.getName());
     }
 
 

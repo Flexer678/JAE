@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutionException;
 
 import Pages.sceneController;
 import assets.localFiles;
@@ -89,7 +90,7 @@ public class ItemController implements Initializable {
          System.out.println(model.title);
     }
 
-    public void add_to_cart(){
+    public void add_to_cart() throws ExecutionException, InterruptedException {
         localFiles.add_to_cart(Item_model.itemmodel_to_CartItem_model(model));
         System.out.println(localFiles.getCartItems());
     }
