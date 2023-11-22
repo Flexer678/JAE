@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="widgets.navbarController">
    <children>
       <HBox id="Nav-bar" alignment="CENTER_LEFT" fillHeight="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="131.0" prefWidth="1515.0" style="-fx-background-color: #fceee5;">
@@ -75,5 +74,10 @@
       <Button fx:id="logo" mnemonicParsing="false" onAction="#go_back_hpage" prefHeight="131.0" prefWidth="124.0" style="-fx-background-color: transparent;" />
       <Button fx:id="books" layoutX="578.0" mnemonicParsing="false" onAction="#get_search_results" prefHeight="131.0" prefWidth="107.0" style="-fx-background-color: transparent;" />
       <Button fx:id="store" layoutX="703.0" mnemonicParsing="false" onAction="#get_all" prefHeight="131.0" prefWidth="119.0" style="-fx-background-color: transparent;" />
+      <HBox layoutX="129.0" layoutY="92.0" prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="tryAgain" prefHeight="65.0" prefWidth="142.0" text="..." />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

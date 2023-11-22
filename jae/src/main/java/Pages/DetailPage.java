@@ -15,10 +15,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import server.BookApi;
+import widgets.navbarController;
 
 public class DetailPage  {
     @FXML
@@ -29,6 +32,9 @@ public class DetailPage  {
 
     @FXML
     ImageView imageItem;
+
+    @FXML
+    HBox navholder;
 
     @FXML
     FlowPane similarItems;
@@ -68,4 +74,14 @@ public class DetailPage  {
         controller.switchtoMainPage(event, localFiles.name);
     }
 
+        public void display_navholder() throws IOException{
+        navholder.getChildren().clear();
+         FXMLLoader loader = new FXMLLoader();
+
+
+            loader.setLocation(getClass().getResource("../widgets/navbar.fxml"));
+            AnchorPane box =loader.load();
+            navbarController controller = loader.getController();
+            navholder.getChildren().add(box);
+    }
 }

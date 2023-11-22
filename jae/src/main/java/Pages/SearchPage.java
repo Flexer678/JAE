@@ -15,12 +15,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import server.BookApi;
 import server.StoreApi;
 import widgets.ItemController;
+import widgets.navbarController;
 
 public class SearchPage implements  EventHandler<ActionEvent> {
     @FXML
@@ -34,7 +36,8 @@ public class SearchPage implements  EventHandler<ActionEvent> {
     @FXML
     Button backBtn;
     
-
+    @FXML
+    HBox navholder;
 
 
     public void go_back_hpage (ActionEvent event) throws IOException {
@@ -129,8 +132,15 @@ public class SearchPage implements  EventHandler<ActionEvent> {
     public void get_detail(ActionEvent event) throws IOException {}
 
 
+    public void display_navholder() throws IOException {
+        navholder.getChildren().clear();
+        FXMLLoader loader = new FXMLLoader();
 
 
-  
+        loader.setLocation(getClass().getResource("../widgets/navbar.fxml"));
+        AnchorPane box = loader.load();
+        navbarController controller = loader.getController();
+        navholder.getChildren().add(box);
+    }
     
 }
