@@ -3,6 +3,7 @@ package Pages;
 import java.io.IOException;
 
 import assets.localFiles;
+import datamodel.CartItem_model;
 import datamodel.Item_model;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -53,6 +54,12 @@ public class DetailPage {
         Image image3 = new Image(model.image);
         imageItem.setImage((image3));
        }
+    }
+
+    public void addToCart(CartItem_model model) {
+        name.setText(model.get_name());
+        price.setText(Double.toString(model.get_price()));
+
     }
 
     //his handles the back button

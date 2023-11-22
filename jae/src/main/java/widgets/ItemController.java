@@ -23,6 +23,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import static assets.localFiles.cartItems;
+
 public class ItemController implements Initializable {
 
     private String id;
@@ -91,7 +93,7 @@ public class ItemController implements Initializable {
 
     public void add_to_cart(){
         System.out.println(name.getText());
-        //localFiles.add_to_cart();
+        localFiles.add_to_cart(cartItems.get(1));
         System.out.println("clicked");
     }
     

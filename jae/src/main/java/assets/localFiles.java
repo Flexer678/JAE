@@ -2,7 +2,7 @@ package assets;
 
 
 import java.util.ArrayList;
-
+import db.DB;
 import datamodel.CartItem_model;
 
 public class localFiles {
@@ -12,7 +12,7 @@ public class localFiles {
 
 
     //where the db is stored
-    static ArrayList<CartItem_model> cartItems = new ArrayList<CartItem_model>();
+    public static ArrayList<CartItem_model> cartItems = new ArrayList<CartItem_model>();
 
     
 
@@ -33,8 +33,8 @@ public class localFiles {
     }
 
     //adds to where the db is stored
-    public static void add_to_cart(CartItem_model model){
+    public static void add_to_cart(CartItem_model model) {
         cartItems.add(model);
-
+        DB.update("carts",name,cartItems);
     }
 }
