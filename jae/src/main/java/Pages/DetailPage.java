@@ -19,7 +19,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import server.BookApi;
 
-public class DetailPage {
+public class DetailPage  {
     @FXML
     Text name, description; 
     

@@ -17,7 +17,7 @@ public class StoreApi {
 
     private static String url = "https://us-central1-fakestore-redirect.cloudfunctions.net/app/";
     public static void main(String args[]) throws Exception {
-        System.out.println(get_categories());
+       get_products_by_category("jewelery");
   
     }
 
@@ -107,8 +107,11 @@ public class StoreApi {
         
     }
      public static ArrayList<Item_model>  get_products_by_category(String categ) throws IOException{
-    
-        URL link = new URL(url + "productCateg/"+ categ);
+
+        String filter = categ.replace(" ", "%20");
+        String ursl = url + "productCateg/"+filter;;
+        System.out.println(ursl);
+        URL link = new URL(url+"productCateg/"+categ);
 
         // Creating an HTTP connection
         HttpURLConnection MyConn = (HttpURLConnection) link.openConnection();
@@ -135,7 +138,7 @@ public class StoreApi {
 
             in.close();
             // Show the output
-             //System.out.println(response.toString());
+            System.out.println(response.toString());
             return  make_data_list(response.toString());
 
         } else {

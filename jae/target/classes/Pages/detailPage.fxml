@@ -3,13 +3,11 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -95,20 +93,7 @@
                   <Font size="21.0" />
                </font>
             </Text>
-            <Label text="Similar items">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-            <AnchorPane prefHeight="372.0" prefWidth="634.0">
-               <children>
-                  <ScrollPane prefHeight="370.0" prefWidth="651.0" style="-fx-background-color: transparent;">
-                     <content>
-                        <FlowPane fx:id="similarItems" prefHeight="347.0" prefWidth="659.0" style="-fx-background-color: white;" />
-                     </content>
-                  </ScrollPane>
-               </children>
-            </AnchorPane>
+            <AnchorPane prefHeight="372.0" prefWidth="634.0" />
          </children>
          <padding>
             <Insets left="50.0" right="50.0" top="50.0" />

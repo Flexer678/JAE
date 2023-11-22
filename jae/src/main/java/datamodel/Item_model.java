@@ -200,6 +200,20 @@ public static Item_model book_to_map_details(String roughData) {
         return newData;
 }
 
+public static  CartItem_model itemmodel_to_CartItem_model(Item_model model){
+        CartItem_model newCartItem = new CartItem_model();
+        newCartItem.set_price(model.price);
+        newCartItem.set_name(model.title);
+        newCartItem.set_quantity(1);
+        newCartItem.set_image(model.image);
+        newCartItem.set_id(model.id);
+        newCartItem.set_item_type(model.isBook);
+        System.out.println(model.price);
+        System.out.println(model.title);
+        System.out.println(model.image);
+        
+        return newCartItem;
+}
 
 
 }

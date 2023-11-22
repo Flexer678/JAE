@@ -9,13 +9,21 @@ public class CartItem_model {
     String name;
     int quantity;
     String image;
-    int id;
+    String id;
     Boolean isBook;
 
-    public int get_id() {
+    public void add_quantity() {
+        quantity++;
+    }
+
+    public void decrease_quantity() {
+        quantity++;
+    }
+
+    public String get_id() {
         return id;
     }
-    public void set_id(int id) {
+    public void set_id(String id) {
         this.id = id;
     }
 

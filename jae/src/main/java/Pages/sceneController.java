@@ -64,11 +64,11 @@ public class sceneController {
     }
 
 
-    public void switchToSearchPage(ActionEvent event, String name) throws IOException {
+    public void switchToSearchPage(ActionEvent event, String search, Boolean isCategory) throws IOException {
        FXMLLoader loader = new  FXMLLoader(getClass().getResource("searchPage.fxml"));
         root =loader.load();
         SearchPage page = loader.getController();
-        //page.displayWelcome(name);
+        page.get_category_results(search);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

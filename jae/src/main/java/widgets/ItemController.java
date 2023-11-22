@@ -90,9 +90,8 @@ public class ItemController implements Initializable {
     }
 
     public void add_to_cart(){
-        System.out.println(name.getText());
-        //localFiles.add_to_cart();
-        System.out.println("clicked");
+        localFiles.add_to_cart(Item_model.itemmodel_to_CartItem_model(model));
+        System.out.println(localFiles.getCartItems());
     }
     
     public VBox getitemview(String image_, String name_, Double price_) {

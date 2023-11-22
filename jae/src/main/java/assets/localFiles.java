@@ -17,7 +17,7 @@ public class localFiles {
     
 
 
-    public ArrayList<CartItem_model> getCartItems() {
+    public static ArrayList<CartItem_model> getCartItems() {
         return cartItems;
     }
 
