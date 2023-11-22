@@ -70,7 +70,7 @@
                         </VBox>
                         <VBox layoutX="552.0" layoutY="46.0" prefHeight="280.0" prefWidth="596.0">
                            <children>
-                              <Label prefHeight="77.0" prefWidth="596.0" text="Miraculus Honey">
+                              <Label prefHeight="77.0" prefWidth="596.0" text="Miracoulus Honey">
                                  <font>
                                     <Font name="System Bold" size="53.0" />
                                  </font>
