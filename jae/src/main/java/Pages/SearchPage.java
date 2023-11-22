@@ -83,11 +83,11 @@ public class SearchPage implements  EventHandler<ActionEvent> {
        private void displayItems(ArrayList<Item_model> items) throws IOException {
         result_view.getChildren().clear();
         System.out.println(items);
-
-        if (items.size() == 0) {
+        try{
+            if (items.size() == 0 || items.equals(null)) {
             result_view.getChildren().add(new Label("No results found"));
         }else if (items.size() >= 30) {
-            for (int i = 0; i < items.size()-10; i++) {
+            for (int i = 0; i < items.size()-20; i++) {
             FXMLLoader loader = new FXMLLoader();
 
             //loads the items  multiple times and sets them to a controller so that the 
@@ -102,7 +102,8 @@ public class SearchPage implements  EventHandler<ActionEvent> {
 
             //adds it to the flow pane
             result_view.getChildren().add(hbox);
-        }else{
+        }}
+        else{
             for (int i = 0; i < items.size(); i++) {
             FXMLLoader loader = new FXMLLoader();
 
@@ -119,7 +120,8 @@ public class SearchPage implements  EventHandler<ActionEvent> {
             //adds it to the flow pane
             result_view.getChildren().add(hbox);
         }
-        }
+        }}catch(Exception e){
+               result_view.getChildren().add(new Label("No results found"));
         }
 
     }

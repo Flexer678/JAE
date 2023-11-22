@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class navbarController implements EventHandler<ActionEvent>{
+public class navbarController implements EventHandler<ActionEvent>, Initializable{
     
     @FXML
     private Label username;
@@ -35,11 +35,20 @@ public class navbarController implements EventHandler<ActionEvent>{
     @FXML
     private Button logo;
 
+     @Override
+    public void initialize(URL url, ResourceBundle arg1) {
+       display_name();
+    }
 
+
+    public void display_name(){
+        username.setText(localFiles.getName());
+        username_profile.setText(localFiles.getName().substring(0,1));
+    }
 
     public void get_search_results(ActionEvent event) throws IOException{
         System.out.println("running");
-        if (searchName.getText() == " " || searchName.getText().length() <= 4) {
+        if (searchName.getText() == " " || searchName.getText().length() <= 3) {
             username_profile.setText("Please enter a valid search term");
         }else{
             sceneController controller = new sceneController();
