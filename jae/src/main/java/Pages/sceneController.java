@@ -38,7 +38,7 @@ public class sceneController {
         FXMLLoader loader = new  FXMLLoader(getClass().getResource("homePage.fxml"));
         root =loader.load();
         HomePage page = loader.getController();
-        page.displayWelcome(name);
+        //page.displayWelcome(name);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -64,11 +64,21 @@ public class sceneController {
     }
 
 
-    public void switchToSearchPage(ActionEvent event, String search, Boolean isCategory) throws IOException {
+    public static String[] types = {"books", "store", "category", "all"};
+    public void switchToSearchPage(ActionEvent event, String search, String type) throws IOException {
        FXMLLoader loader = new  FXMLLoader(getClass().getResource("searchPage.fxml"));
         root =loader.load();
         SearchPage page = loader.getController();
-        page.get_category_results(search);
+        if (type == types[0]) {
+            page.get_book_results(search);
+
+        }else if(type == types[1] || type == types[3]){
+            page.get_all_results();
+        }
+        else if(type == types[2]){
+            page.get_category_results(search);
+        }
+        page.display_search_results_name(search);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

@@ -135,8 +135,9 @@ public class BookApi {
     
     private static ArrayList<Item_model> make_data_list(String response) {
         ArrayList<Item_model> returnData = new ArrayList<Item_model>();
+         System.out.println(response);
         response = response.substring(response.indexOf(":[", 1) + 2, response.length() - 3);
-        // System.out.println(response);
+        
         String[] keyValuePairs = response.split("},");
 
         for (String s : keyValuePairs) {

@@ -109,9 +109,10 @@ public class StoreApi {
      public static ArrayList<Item_model>  get_products_by_category(String categ) throws IOException{
 
         String filter = categ.replace(" ", "%20");
+        System.out.println(filter);
         String ursl = url + "productCateg/"+filter;;
         System.out.println(ursl);
-        URL link = new URL(url+"productCateg/"+categ);
+        URL link = new URL(ursl);
 
         // Creating an HTTP connection
         HttpURLConnection MyConn = (HttpURLConnection) link.openConnection();

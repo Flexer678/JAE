@@ -1,25 +1,64 @@
 package widgets;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import Pages.sceneController;
+import assets.localFiles;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
-public class navbarController implements Initializable,EventHandler<ActionEvent>{
-       @FXML
-    private Label username;
+public class navbarController implements EventHandler<ActionEvent>{
+    
     @FXML
-    Label username_profile;
+    private Label username;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'initialize'");
+    @FXML
+    private Label username_profile;
+
+    @FXML
+    private TextField searchName;
+
+    @FXML
+    private Button books;
+
+    @FXML
+    private Button store;
+
+    @FXML
+    private Button logo;
+
+
+
+    public void get_search_results(ActionEvent event) throws IOException{
+        System.out.println("running");
+        if (searchName.getText() == " " || searchName.getText().length() <= 4) {
+            username_profile.setText("Please enter a valid search term");
+        }else{
+            sceneController controller = new sceneController();
+            controller.switchToSearchPage(event, searchName.getText(), sceneController.types[0]);
+        }
     }
+
+    public void get_all(ActionEvent event) throws IOException {
+        sceneController controller = new sceneController();
+        controller.switchToSearchPage(event, "Store items", sceneController.types[3]);
+    }
+    
+    public void go_back_hpage(ActionEvent event) throws IOException{
+       sceneController controller = new sceneController();
+        controller.switchtoMainPage(event, localFiles.getName());
+    }
+
+
+  
     @Override
     public void handle(ActionEvent event) {
         // TODO Auto-generated method stub

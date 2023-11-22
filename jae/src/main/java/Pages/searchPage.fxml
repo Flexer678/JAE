@@ -241,7 +241,7 @@
                                     </Text>
                                  </children>
                               </HBox>
-                              <Button fx:id="getDetailBtn4" mnemonicParsing="false" onAction="#get_detail" prefHeight="276.0" prefWidth="202.0" style="-fx-background-color: transparent;" />
+                              <Button fx:id="backBtn" mnemonicParsing="false" onAction="#go_back_hpage" prefHeight="276.0" prefWidth="202.0" style="-fx-background-color: transparent;" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -417,5 +417,10 @@
             </Label>
          </children>
       </FlowPane>
+      <Button fx:id="back_btn" layoutX="8.0" layoutY="144.0" mnemonicParsing="false" onAction="#go_back_hpage" prefHeight="46.0" prefWidth="53.0" style="-fx-background-color: black; -fx-position-shape: triangle; -fx-background-radius: 60;" text="《" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

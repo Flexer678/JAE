@@ -30,18 +30,14 @@ import server.BookApi;
 import server.StoreApi;
 import widgets.CategoryBtnCntroller;
 import widgets.ItemController;
+import widgets.navbarController;
 import datamodel.*;
 import assets.localFiles;
 
 
 public class HomePage extends Application implements EventHandler<ActionEvent>, Initializable {
 
-    @FXML
-    private Label username;
-
-    @FXML
-    Label username_profile;
-
+  
     @FXML
     FlowPane featured_items;
 
@@ -50,6 +46,12 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
 
     @FXML
     FlowPane categoryList;
+
+    @FXML
+    HBox navholder;
+
+    @FXML
+    ImageView logo;
 
   
     List<String> food = new ArrayList<String>() {
@@ -69,18 +71,31 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
     @Override
     public void initialize(URL url, ResourceBundle arg1) {
         System.out.println(localFiles.getName()+ "\n");
-        displayWelcome(localFiles.name);
+
 
         try {
             displayItems(StoreApi.get_all());
             displayCategories(StoreApi.get_categories());
             display_featured_items(StoreApi.get_all());
+            display_navholder();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
       
+    }
+
+
+    public void display_navholder() throws IOException{
+        navholder.getChildren().clear();
+         FXMLLoader loader = new FXMLLoader();
+
+            
+            loader.setLocation(getClass().getResource("../widgets/navbar.fxml"));
+            AnchorPane box =loader.load();
+            navbarController controller = loader.getController();
+            navholder.getChildren().add(box);
     }
 
     @Override
@@ -123,15 +138,7 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
     }
 
     //shows name in the navigationbar
-    public void displayWelcome(String name) {
-        username.setText(name);
-        
-        try {
-            username_profile.setText(name.substring(0, 1).toUpperCase());
-        } catch (Exception e) {
-           username_profile.setText("T");
-        }
-    }
+   
 
 
 
