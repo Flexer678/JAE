@@ -28,14 +28,14 @@
                   </VBox>
                   <HBox alignment="BOTTOM_CENTER" prefHeight="14.0" prefWidth="202.0" style="-fx-background-color: white;" VBox.vgrow="SOMETIMES">
                      <children>
-                        <Label fx:id="name" alignment="BOTTOM_LEFT" prefHeight="24.0" prefWidth="111.0" text="Strawberry" textFill="#9e1919" HBox.hgrow="NEVER">
+                        <Label fx:id="name" alignment="BOTTOM_LEFT" prefHeight="24.0" prefWidth="111.0" text="Strawberry" HBox.hgrow="NEVER">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
                         <HBox prefHeight="36.0" prefWidth="71.0" style="-fx-background-color: white;">
                            <children>
-                              <Text fx:id="price" strokeType="OUTSIDE" strokeWidth="0.0" text="\$12.99" textAlignment="RIGHT" wrappingWidth="68.951171875">
+                              <Text fx:id="price" fill="#fc5a5a" strokeType="OUTSIDE" strokeWidth="0.0" text="\$12.99" textAlignment="RIGHT" wrappingWidth="68.951171875">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>

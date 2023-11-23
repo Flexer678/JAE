@@ -24,7 +24,7 @@
                   <Insets />
                </HBox.margin>
             </ImageView>
-            <TextField id="imput_box" fx:id="searchName" alignment="CENTER" prefHeight="23.0" prefWidth="430.0" promptText="Search here..." style="-fx-background-color: white; -fx-background-radius: 30;">
+            <TextField id="imput_box" fx:id="searchName" prefHeight="23.0" prefWidth="430.0" promptText="Search here..." style="-fx-background-color: white; -fx-background-radius: 30;">
                <HBox.margin>
                   <Insets right="40.0" />
                </HBox.margin>
@@ -38,7 +38,7 @@
                   <Font size="29.0" />
                </font>
             </TextField>
-            <Label text="BOOKS?">
+            <Label disable="true" opacity="0.0" text="BOOKS?">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -46,7 +46,7 @@
                   <Insets right="40.0" />
                </HBox.margin>
             </Label>
-            <Label text="OTHERS?">
+            <Label disable="true" opacity="0.0" text="OTHERS?">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -72,8 +72,14 @@
          </children>
       </HBox>
       <Button fx:id="logo" mnemonicParsing="false" onAction="#go_back_hpage" prefHeight="131.0" prefWidth="124.0" style="-fx-background-color: transparent;" />
-      <Button fx:id="books" layoutX="578.0" mnemonicParsing="false" onAction="#get_search_results" prefHeight="131.0" prefWidth="107.0" style="-fx-background-color: transparent;" />
-      <Button fx:id="store" layoutX="703.0" mnemonicParsing="false" onAction="#get_all" prefHeight="131.0" prefWidth="119.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="store" layoutX="665.0" layoutY="42.0" mnemonicParsing="false" onAction="#get_all" prefHeight="48.0" prefWidth="178.0" style="-fx-background-color: pink; -fx-background-radius: 23;" text="in OTHERS" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font></Button>
+      <Button fx:id="books" layoutX="517.0" layoutY="42.0" mnemonicParsing="false" onAction="#get_search_results" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: #f55375; -fx-background-radius: 23;" text="in BOOKS" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font></Button>
       <HBox layoutX="142.0" layoutY="86.0" prefHeight="30.0" prefWidth="240.0">
          <children>
             <Label fx:id="tryAgain" prefHeight="30.0" prefWidth="226.0" textFill="#802f2f" />
