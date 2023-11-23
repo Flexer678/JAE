@@ -17,7 +17,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-background-radius: 20px;">
                <children>
-                  <VBox fx:id="image" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="202.0" style="-fx-background-color: pink; -fx-border-radius: 20px; -fx-background-radius: 20px;">
+                  <VBox fx:id="image" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="202.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
                      <children>
                         <ImageView fx:id="imageiIem" fitHeight="265.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
                            <image>
