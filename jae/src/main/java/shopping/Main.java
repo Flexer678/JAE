@@ -3,13 +3,13 @@ package shopping;
 import Pages.*;
 //import item.java from sec/widgets
 import assets.localFiles;
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
-
-        if (localFiles.isSignIn) {
+    public static void main(String[] args) throws IOException {
+        if (localFiles.isLoggedIn()) {
             run_hPages(args);
-
         } else {
             run_SignIn(args);
         }

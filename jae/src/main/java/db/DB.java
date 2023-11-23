@@ -26,7 +26,7 @@ public class DB {
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .build();
 
-            FirebaseApp.initializeApp(options);
+            if (fireDB == null) {FirebaseApp.initializeApp(options);}
 
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());

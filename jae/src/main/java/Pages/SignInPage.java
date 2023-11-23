@@ -1,9 +1,12 @@
 package Pages;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -19,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -41,7 +45,7 @@ public class SignInPage extends Application implements EventHandler<ActionEvent>
     TextField username;
 
     @FXML
-    TextField password;
+    PasswordField password;
 
     @Override
     public void initialize(URL url, ResourceBundle arg1) {
@@ -80,13 +84,23 @@ public class SignInPage extends Application implements EventHandler<ActionEvent>
 
     
     //handles the signin options
-    public void signIn(ActionEvent actionEvent) {
-        String name = username.getText();
+    public void signIn(ActionEvent actionEvent) throws IOException {
+        //if signed in
+
+        String name = username.getText().replace(",,,",""); //sanitize input to now include regex splitter
         String passwd = password.getText();
 
 
         //gives the name to localfiles which initilized name as the username input and can be used as long as you want
         localFiles.set_name(name);
+
+        //generates and encrypts token for storage, stores it
+        String unencryptedToken = name + ",,," + passwd;
+        String encryptedToken = Base64.getEncoder().encodeToString(unencryptedToken.getBytes());
+        String tokenFileName = localFiles.getTokenFile();
+        BufferedWriter br = new BufferedWriter(new FileWriter(tokenFileName));
+        br.write(encryptedToken); //writes the edited string buffer to the new file
+        br.close();
         
         sceneController control = new sceneController();
         try {
