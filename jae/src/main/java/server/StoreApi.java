@@ -17,7 +17,7 @@ public class StoreApi {
 
     private static String url = "https://us-central1-fakestore-redirect.cloudfunctions.net/app/";
     public static void main(String args[]) throws Exception {
-       get_products_by_category("jewelery");
+       get_products_by_category("Jewelry");
   
     }
 

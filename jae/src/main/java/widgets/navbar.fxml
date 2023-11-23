@@ -24,7 +24,7 @@
                   <Insets />
                </HBox.margin>
             </ImageView>
-            <TextField id="imput_box" fx:id="searchName" alignment="CENTER" prefHeight="23.0" prefWidth="430.0" promptText="Search product here" style="-fx-background-color: white; -fx-background-radius: 30;">
+            <TextField id="imput_box" fx:id="searchName" alignment="CENTER" prefHeight="23.0" prefWidth="430.0" promptText="Search here..." style="-fx-background-color: white; -fx-background-radius: 30;">
                <HBox.margin>
                   <Insets right="40.0" />
                </HBox.margin>
@@ -51,8 +51,8 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <HBox prefHeight="62.0" prefWidth="0.0" />
-            <Label fx:id="username" prefHeight="51.0" prefWidth="119.0" text="Label" textAlignment="RIGHT" textOverrun="CLIP">
+            <HBox prefHeight="62.0" prefWidth="64.0" />
+            <Label fx:id="username" prefHeight="51.0" prefWidth="91.0" text="Label" textAlignment="RIGHT" textOverrun="CLIP">
                <HBox.margin>
                   <Insets left="400.0" />
                </HBox.margin>

@@ -33,7 +33,7 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="TTILE" wrappingWidth="629.6884765625">
+            <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" wrappingWidth="629.6884765625">
                <font>
                   <Font size="51.0" />
                </font>
@@ -48,7 +48,44 @@
                   <Font size="21.0" />
                </font>
             </Text>
-            <AnchorPane prefHeight="372.0" prefWidth="634.0" />
+            <AnchorPane prefHeight="309.0" prefWidth="611.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="37.0" layoutY="290.0" prefHeight="71.0" prefWidth="574.0" snapToPixel="false">
+                     <children>
+                        <Text fx:id="qtyText" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty." wrappingWidth="56.42333984375">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <HBox alignment="CENTER" prefHeight="71.0" prefWidth="239.0">
+                           <children>
+                              <Button fx:id="qtyMinus" mnemonicParsing="false" prefHeight="71.0" prefWidth="74.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="+" textFill="WHITE">
+                                 <font>
+                                    <Font size="33.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="qtyNum" alignment="CENTER" prefHeight="60.0" prefWidth="71.0" text="10" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="29.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="qtyAdd" mnemonicParsing="false" prefHeight="71.0" prefWidth="74.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="+" textFill="WHITE">
+                                 <font>
+                                    <Font size="33.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="71.0" prefWidth="15.0" />
+                        <Button fx:id="addToCartBtn" mnemonicParsing="false" prefHeight="71.0" prefWidth="219.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Add to Cart" textFill="WHITE">
+                           <font>
+                              <Font size="31.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
          </children>
          <padding>
             <Insets left="50.0" right="50.0" top="50.0" />

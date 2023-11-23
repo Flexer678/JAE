@@ -70,22 +70,22 @@
                         </VBox>
                         <VBox layoutX="552.0" layoutY="46.0" prefHeight="280.0" prefWidth="596.0">
                            <children>
-                              <Label prefHeight="77.0" prefWidth="596.0" text="Miracoulus Honey">
+                              <Label prefHeight="77.0" prefWidth="596.0" text="Miraculous Honey">
                                  <font>
-                                    <Font name="System Bold" size="53.0" />
+                                    <Font name="System Bold Italic" size="63.0" />
                                  </font>
                                  <VBox.margin>
                                     <Insets bottom="30.0" />
                                  </VBox.margin>
                               </Label>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="the thing every one loves!!!, Honey. this honey has supernatural powers and can give you super powers. Best of all, you get supernatural coding powers where you understand every single code, even binary" wrappingWidth="606.07421875">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The thing everyone loves!!! Honey. This honey has supernatural powers and can give you superpowers. Best of all, you get supernatural coding powers where you understand every single code, even binary!" wrappingWidth="606.07421875">
                                  <font>
                                     <Font size="21.0" />
                                  </font>
                               </Text>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Label prefHeight="55.0" prefWidth="438.0" text="price: $40.99">
+                                    <Label prefHeight="55.0" prefWidth="438.0" text="Price: $40.99">
                                        <font>
                                           <Font size="31.0" />
                                        </font>

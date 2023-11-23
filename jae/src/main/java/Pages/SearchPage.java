@@ -24,14 +24,12 @@ import server.StoreApi;
 import widgets.ItemController;
 import widgets.navbarController;
 
-public class SearchPage implements  EventHandler<ActionEvent> {
+public class SearchPage implements EventHandler<ActionEvent>, Initializable {
     @FXML
     FlowPane result_view;
-
  
     @FXML
     Label search_name;
-    
 
     @FXML
     Button backBtn;
@@ -142,5 +140,13 @@ public class SearchPage implements  EventHandler<ActionEvent> {
         navbarController controller = loader.getController();
         navholder.getChildren().add(box);
     }
-    
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        try {
+            display_navholder();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
