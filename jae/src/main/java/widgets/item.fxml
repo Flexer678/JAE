@@ -26,18 +26,18 @@
                         </ImageView>
                      </children>
                   </VBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="425.0" prefWidth="202.0" style="-fx-background-color: white;" VBox.vgrow="SOMETIMES">
                      <children>
-                        <Label fx:id="name" prefHeight="25.0" prefWidth="110.0" text="Strawberry" textAlignment="CENTER">
+                        <Label fx:id="name" prefHeight="25.0" prefWidth="95.0" text="Strawberry" textFill="#e86666" wrapText="true" HBox.hgrow="NEVER">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
                         <HBox prefHeight="36.0" prefWidth="71.0" style="-fx-background-color: white;">
                            <children>
-                              <Text fx:id="price" fill="#ff3aaa" strokeType="OUTSIDE" strokeWidth="0.0" text="\$12.99" wrappingWidth="70.951171875">
+                              <Text fx:id="price" strokeType="OUTSIDE" strokeWidth="0.0" text="\$12.99" textAlignment="RIGHT" wrappingWidth="73.951171875">
                                  <font>
-                                    <Font name="System Bold" size="21.0" />
+                                    <Font size="20.0" />
                                  </font>
                               </Text>
                            </children>
@@ -50,7 +50,7 @@
                   <Button fx:id="addToCartBtn" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#add_to_cart" prefHeight="35.0" prefWidth="202.0" style="-fx-background-color: black; -fx-background-radius: 50px;" text="Add to Cart" textFill="WHITE" VBox.vgrow="NEVER" />
                </children>
             </VBox>
-            <Button fx:id="getDetailBtn" mnemonicParsing="false" onAction="#get_detail" prefHeight="276.0" prefWidth="202.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="getDetailBtn" mnemonicParsing="false" onAction="#get_detail" prefHeight="278.0" prefWidth="202.0" style="-fx-background-color: transparent;" />
          </children>
       </AnchorPane>
    </children>
