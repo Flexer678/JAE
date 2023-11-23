@@ -14,6 +14,9 @@ public class CartPage implements Initializable {
     @FXML
     VBox cartContainer;
 
+    @FXML
+
+
     ArrayList<Item_model> cartItems = new ArrayList<Item_model>();
 
     @Override
