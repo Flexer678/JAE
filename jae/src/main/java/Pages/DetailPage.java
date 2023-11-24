@@ -49,6 +49,7 @@ public class DetailPage implements Initializable {
     //this displays the details of the item in a new page and is called by the item_controller.java file
     public void display_detail(Item_model model,Boolean isBook) throws IOException {
        if (isBook) {
+        System.out.println("book is calling");
         model = BookApi.get_product_details_by_id(model.getId());
             name.setText(model.getTitle());
         description.setText(model.getDescription());
@@ -57,8 +58,10 @@ public class DetailPage implements Initializable {
         imageItem.setImage((image3));
         
        }else{
+        System.out.println(model);
          name.setText(model.getTitle());
         description.setText(model.getDescription());
+
         price.setText(Double.toString(model.getPrice()));
         Image image3 = new Image(model.image);
         imageItem.setImage((image3));

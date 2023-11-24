@@ -45,6 +45,15 @@ public class navbarController implements EventHandler<ActionEvent>, Initializabl
     }
 
 
+    
+    public void go_to_cart(ActionEvent event) throws IOException{
+        sceneController controller = new sceneController();
+        controller.switchtoCartPage(event);
+    }
+
+
+
+
     public void display_name(){
         username.setText(localFiles.getName());
         username_profile.setText(localFiles.getName().substring(0,1));

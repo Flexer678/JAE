@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="935.0" prefWidth="1500.0" style="-fx-background-color: linear-gradient(to top,white, #fceee5,#fceee5);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Pages.cartPage">
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="935.0" prefWidth="1500.0" style="-fx-background-color: linear-gradient(to top,white, #fceee5,#fceee5);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Pages.CartPage">
    <children>
       <AnchorPane prefHeight="171.0" prefWidth="1501.0" style="-fx-background-color: #ffabab;" />
       <Text fx:id="myCartTitle" layoutX="190.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Cart" wrappingWidth="287.13671875">
@@ -29,7 +25,7 @@
       </Button>
       <AnchorPane layoutX="1109.0" layoutY="298.0" scaleX="1.2" scaleY="1.2">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="425.0" layoutY="42.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="280.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="425.0" layoutX="-12.0" layoutY="43.0" scaleX="1.2" scaleY="1.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="280.0" />
             <Text fx:id="total" layoutX="16.0" layoutY="355.0" scaleX="1.2" scaleY="1.2" strokeType="OUTSIDE" strokeWidth="0.0" text="Grand Total" wrappingWidth="132.13671875">
                <font>
                   <Font name="Corbel Light" size="19.0" />
@@ -51,27 +47,27 @@
                   <Font name="Corbel Light" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="35.0" layoutY="423.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="211.0" scaleX="1.2" scaleY="1.2" style="-fx-background-color: black; -fx-background-radius: 20;" text="Checkout" textFill="WHITE">
+            <Button fx:id="checkout" layoutX="35.0" layoutY="423.0" mnemonicParsing="false" onAction="#remove_all" prefHeight="49.0" prefWidth="211.0" scaleX="1.2" scaleY="1.2" style="-fx-background-color: black; -fx-background-radius: 20;" text="Checkout" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font></Button>
             <Line endX="101.0" layoutX="165.0" layoutY="95.0" scaleX="1.2" scaleY="1.2" startX="-150.0" strokeWidth="0.2" />
-            <Label fx:id="subtotalNum" layoutX="215.0" layoutY="128.0" prefHeight="27.0" prefWidth="49.0" text="\$1.99">
+            <Label fx:id="subtotalNum" layoutX="202.0" layoutY="128.0" prefHeight="27.0" prefWidth="62.0" text="\$1.99">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="shippingNum" layoutX="216.0" layoutY="183.0" prefHeight="27.0" prefWidth="49.0" text="\$1.99">
+            <Label fx:id="shippingNum" layoutX="206.0" layoutY="183.0" prefHeight="27.0" prefWidth="59.0" text="\$1.99">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="taxNum" layoutX="215.0" layoutY="255.0" prefHeight="27.0" prefWidth="49.0" text="\$1.99">
+            <Label fx:id="taxNum" layoutX="205.0" layoutY="255.0" prefHeight="27.0" prefWidth="59.0" text="\$1.99">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="totalNum" layoutX="215.0" layoutY="336.0" prefHeight="27.0" prefWidth="49.0" text="\$1.99">
+            <Label fx:id="totalNum" layoutX="205.0" layoutY="336.0" prefHeight="27.0" prefWidth="59.0" text="\$1.99">
                <font>
                   <Font size="18.0" />
                </font>
@@ -85,63 +81,7 @@
       </AnchorPane>
       <ScrollPane layoutX="219.0" layoutY="321.0" prefHeight="426.0" prefWidth="635.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: white; -fx-background-radius: 25;">
          <content>
-            <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" hgap="30.0" prefHeight="457.0" prefWidth="618.0" style="-fx-background-radius: 25; -fx-background-color: white;" vgap="30.0">
-               <children>
-                  <AnchorPane prefHeight="106.0" prefWidth="579.0" style="-fx-background-color: #ffabab; -fx-background-radius: 20;">
-                     <children>
-                        <HBox alignment="CENTER" layoutX="6.0" layoutY="6.0" prefHeight="94.0" prefWidth="103.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
-                           <children>
-                              <ImageView fx:id="itemPhoto" fitHeight="82.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/smith_shoes.jpg" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </HBox>
-                        <Button fx:id="itemRemove" layoutX="506.0" layoutY="33.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" style="-fx-background-radius: 23; -fx-background-color: transpaprent;" text="Remove" />
-                        <Text fx:id="quantityTitle" fill="#686767" layoutX="434.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty." wrappingWidth="30.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="priceTitle" fill="#686767" layoutX="329.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="41.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                        <Label fx:id="itemPrice" layoutX="329.0" layoutY="35.0" prefHeight="20.0" prefWidth="41.0" text="\$17.99">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="ItemDescription" layoutX="139.0" layoutY="29.0" prefHeight="49.0" prefWidth="155.0" text="&lt;Item Description blah blah blah blah lah....&gt;" textFill="#eeeeee" wrapText="true">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="itemName" layoutX="139.0" layoutY="9.0" text="&lt;Item Name&gt;">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="qtyAdd" layoutX="463.0" layoutY="31.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="21.0" style="-fx-background-radius: 25; -fx-background-color: black;" text="+" textFill="WHITE">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="qtyMinus" layoutX="405.0" layoutY="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="28.0" style="-fx-background-radius: 25; -fx-background-color: black;" text="-" textFill="WHITE">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Button>
-                        <Label layoutX="442.0" layoutY="37.0" prefHeight="17.0" prefWidth="21.0" text="1" textAlignment="CENTER" />
-                     </children>
-                     <FlowPane.margin>
-                        <Insets top="20.0" />
-                     </FlowPane.margin>
-                  </AnchorPane>
-               </children>
-            </FlowPane>
+            <FlowPane fx:id="cartItem_view" alignment="TOP_CENTER" columnHalignment="CENTER" hgap="30.0" prefHeight="457.0" prefWidth="618.0" style="-fx-background-radius: 25; -fx-background-color: white;" vgap="30.0" />
          </content>
       </ScrollPane>
    </children>

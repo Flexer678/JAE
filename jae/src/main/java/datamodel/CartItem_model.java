@@ -66,4 +66,7 @@ public class CartItem_model {
         this.image = image;
     }
 
+    public void set_data(CartItem_model cartItem_model) {
+    }
+
 }

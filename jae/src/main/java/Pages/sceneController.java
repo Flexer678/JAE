@@ -46,7 +46,10 @@ public class sceneController {
     }
 
     public void switchtoCartPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("cartPage.fxml"));
+          FXMLLoader loader = new  FXMLLoader(getClass().getResource("cartPage.fxml"));
+        root =loader.load();
+        CartPage page = loader.getController();
+        page.displayItems(localFiles.getCartItems());
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

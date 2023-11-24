@@ -63,6 +63,7 @@ public class ItemController implements Initializable {
     public void set_data(Item_model item) {
         model = item;
         isBook = item.getIsBook();
+        System.out.println(item.title);
        // image.setImage(new Image(item.get_image_url()));
         name.setText(item.title);
         price.setText(Double.toString(item.price));
