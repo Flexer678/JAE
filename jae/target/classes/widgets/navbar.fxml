@@ -24,7 +24,7 @@
                   <Insets />
                </HBox.margin>
             </ImageView>
-            <TextField id="imput_box" fx:id="searchName" prefHeight="23.0" prefWidth="430.0" promptText="Search here..." style="-fx-background-color: white; -fx-background-radius: 30;">
+            <TextField id="imput_box" fx:id="searchName" prefHeight="23.0" prefWidth="430.0" promptText="Search titles here..." style="-fx-background-color: white; -fx-background-radius: 30;">
                <HBox.margin>
                   <Insets right="40.0" />
                </HBox.margin>
@@ -72,7 +72,7 @@
          </children>
       </HBox>
       <Button fx:id="logo" mnemonicParsing="false" onAction="#go_back_hpage" prefHeight="131.0" prefWidth="124.0" style="-fx-background-color: transparent;" />
-      <Button fx:id="store" layoutX="665.0" layoutY="42.0" mnemonicParsing="false" onAction="#get_all" prefHeight="48.0" prefWidth="178.0" style="-fx-background-color: pink; -fx-background-radius: 23;" text="in OTHERS" textFill="WHITE">
+      <Button fx:id="store" layoutX="701.0" layoutY="42.0" mnemonicParsing="false" onAction="#get_all" prefHeight="48.0" prefWidth="142.0" style="-fx-background-color: f9c1cf; -fx-background-radius: 23;" text="OTHERS" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font></Button>
