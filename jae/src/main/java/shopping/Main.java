@@ -8,6 +8,7 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        //check if user is logged in. if so, go directly to homepage. otherwise, prompt for login.
         if (localFiles.isLoggedIn()) {
             run_hPages(args);
         } else {
