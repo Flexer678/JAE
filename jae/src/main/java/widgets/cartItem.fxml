@@ -20,7 +20,7 @@
             </ImageView>
          </children>
       </HBox>
-      <Button fx:id="itemRemove" layoutX="506.0" layoutY="33.0" mnemonicParsing="false" onAction="#removeItem" prefHeight="25.0" prefWidth="59.0" text="Remove" />
+      <Button fx:id="itemRemove" layoutX="506.0" layoutY="33.0" mnemonicParsing="false" onAction="#removeItem" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: black; -fx-background-radius: 30;" text="Remove" textFill="WHITE" />
       <Text fx:id="quantityTitle" fill="#686767" layoutX="432.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty." wrappingWidth="30.0">
          <font>
             <Font size="14.0" />
@@ -46,12 +46,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="462.0" layoutY="36.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="21.0" text="+">
+      <Button layoutX="462.0" layoutY="36.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="21.0" style="-fx-background-color: black; -fx-background-radius: 40px;" text="+" textFill="WHITE">
          <font>
-            <Font size="9.0" />
+            <Font name="System Bold" size="9.0" />
          </font>
       </Button>
-      <Button layoutX="411.0" layoutY="35.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="21.0" text="-">
+      <Button layoutX="411.0" layoutY="35.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="21.0" style="-fx-background-color: black; -fx-background-radius: 60;" text="-" textFill="WHITE">
          <font>
             <Font size="9.0" />
          </font>
