@@ -12,6 +12,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+
+
+
+///scene controller handles all the switches betweeen the pages and some of the data passing.
 public class sceneController {
     private Stage stage;
     private Scene scene;
@@ -67,7 +71,9 @@ public class sceneController {
     }
 
 
+    //this list contains the types of searches that search page can use
     public static String[] types = {"books", "store", "category", "all"};
+    
     public void switchToSearchPage(ActionEvent event, String search, String type) throws IOException {
        FXMLLoader loader = new  FXMLLoader(getClass().getResource("searchPage.fxml"));
         root =loader.load();

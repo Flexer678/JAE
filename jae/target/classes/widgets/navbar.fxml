@@ -60,6 +60,14 @@
                   <Font size="23.0" />
                </font>
             </Label>
+            <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/shopping-cart.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </ImageView>
             <VBox alignment="CENTER" prefHeight="67.0" prefWidth="78.0" style="-fx-background-color: pink; -fx-background-radius: 60;">
                <children>
                   <Label fx:id="username_profile" text="A" textFill="WHITE">
@@ -85,5 +93,6 @@
             <Label fx:id="tryAgain" prefHeight="30.0" prefWidth="226.0" textFill="#802f2f" />
          </children>
       </HBox>
+      <Button fx:id="cart" layoutX="1341.0" layoutY="36.0" mnemonicParsing="false" onAction="#go_to_cart" prefHeight="75.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>

@@ -22,9 +22,7 @@ public class BookApi {
         return randomList;
     }
 
-    public static void main(String[] args) throws IOException {
-       // get_product_details_by_id("4EE27A69BA1F7E8DD8F077AF946D3B3D");
-    }
+   
 
 
     public void setRandomList(String[] randomList) {

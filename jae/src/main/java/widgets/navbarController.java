@@ -39,6 +39,9 @@ public class navbarController implements EventHandler<ActionEvent>, Initializabl
     @FXML
     private Button logo;
 
+    @FXML
+    private Button cart;
+    
      @Override
     public void initialize(URL url, ResourceBundle arg1) {
        display_name();

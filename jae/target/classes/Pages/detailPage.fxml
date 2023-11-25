@@ -82,7 +82,7 @@
                                  </children>
                               </HBox>
                               <HBox prefHeight="71.0" prefWidth="15.0" />
-                              <Button fx:id="addToCartBtn" mnemonicParsing="false" prefHeight="71.0" prefWidth="219.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Add to Cart" textFill="WHITE">
+                              <Button fx:id="addToCartBtn" mnemonicParsing="false" onAction="#add_to_cart" prefHeight="71.0" prefWidth="219.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Add to Cart" textFill="WHITE">
                                  <font>
                                     <Font size="31.0" />
                                  </font>

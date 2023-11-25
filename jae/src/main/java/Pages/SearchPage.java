@@ -24,6 +24,9 @@ import server.StoreApi;
 import widgets.ItemController;
 import widgets.navbarController;
 
+
+
+
 public class SearchPage implements EventHandler<ActionEvent>, Initializable {
     @FXML
     FlowPane result_view;
@@ -50,6 +53,7 @@ public class SearchPage implements EventHandler<ActionEvent>, Initializable {
     }
 
 
+    
     public void get_book_results(String searchName) throws IOException{
         System.out.println(searchName+  "alex");
         ArrayList<Item_model> model = BookApi.get_search_results(searchName);
@@ -77,10 +81,11 @@ public class SearchPage implements EventHandler<ActionEvent>, Initializable {
 
 
     public void add_to_cart(ActionEvent event) throws IOException {
-        //
+        
         System.out.println("ss");
     }
 
+        //this just displays the search results
        private void displayItems(ArrayList<Item_model> items) throws IOException {
         result_view.getChildren().clear();
         System.out.println(items);
@@ -127,7 +132,6 @@ public class SearchPage implements EventHandler<ActionEvent>, Initializable {
 
     }
 
-    public void get_detail(ActionEvent event) throws IOException {}
 
 
     public void display_navholder() throws IOException {

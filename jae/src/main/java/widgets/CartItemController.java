@@ -26,11 +26,26 @@ public class CartItemController implements  EventHandler<ActionEvent> {
     @FXML
     AnchorPane cartItem;
     @FXML
-    Label itemName,itemDescription, itemPrice, quantity;
+    Label itemName;
+    
+    @FXML
+    Label itemDescription;
+    
+    @FXML
+    Label itemPrice;
+    @FXML
+    Label quantity;
     @FXML 
     ImageView itemImage;
     @FXML
-    Button itemRemove, qtyAdd, qtyMinus, getItem;
+    Button itemRemove;
+    @FXML
+    Button qtyMinus;
+    
+    @FXML
+    Button getItem;
+    @FXML
+    Button qtyAdd; 
 
     private String id;
     private int qty;
@@ -115,16 +130,14 @@ public class CartItemController implements  EventHandler<ActionEvent> {
 
     public void set_data(CartItem_model model){
         model_data = model;
-        System.out.println(model_data);
-        try {
-            itemName.setText(model.get_name().substring(0, 5)+ "...");
+        System.out.println("working");
+        itemName.setText(model.get_name().substring(0, 5)+ "...");
         itemDescription.setText("click to view description");
         itemPrice.setText("$" +model.get_price().toString());
         itemImage.setImage(new Image(model.get_image()));
         quantity.setText(Integer.toString(model.get_quantity()));
-        } catch (Exception e) {
-           
-        }
+        System.out.println("done");
+        
     }
 
     @Override
@@ -133,8 +146,7 @@ public class CartItemController implements  EventHandler<ActionEvent> {
         throw new UnsupportedOperationException("Unimplemented method 'handle'");
     }
 
-    public void set_data(Item_model item_model) {
-    }
+
 
     
     

@@ -27,6 +27,9 @@ import server.BookApi;
 import widgets.navbarController;
 
 public class DetailPage implements Initializable {
+
+
+    // name and dscription of the item
     @FXML
     Text name, description; 
     
@@ -91,6 +94,7 @@ public class DetailPage implements Initializable {
             navholder.getChildren().add(box);
     }
 
+    //the initialize is just like the main function and is called when the page loads
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         try {

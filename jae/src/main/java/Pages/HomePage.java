@@ -140,9 +140,7 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
     //shows name in the navigationbar
    
 
-
-
-
+        //this displays all the categories by loading the category.fxml file and changing the names of each and every of them
         private void displayCategories(List<String> categories) throws IOException {
         categoryList.getChildren().clear();
 
@@ -163,10 +161,11 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
     }
 
     
-    //
+    //this displays all the items at the bottom of the home page
     private void displayItems(List<Item_model> items) throws IOException {
         item_view.getChildren().clear();
-        for (int i = 0; i < items.size()-10; i++) {
+       try{
+         for (int i = 0; i < items.size()-10; i++) {
             FXMLLoader loader = new FXMLLoader();
 
             //loads the items  multiple times and sets them to a controller so that the 
@@ -181,10 +180,11 @@ public class HomePage extends Application implements EventHandler<ActionEvent>, 
             //adds it to the flow pane
             item_view.getChildren().add(hbox);
         }
+       }catch(Exception e){}
     }
 
 
-
+    //this is called by the main function when a user is already logged in
     public void run(String[] args) {
         launch(args);
     }

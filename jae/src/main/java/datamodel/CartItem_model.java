@@ -2,6 +2,7 @@
 package datamodel;
 
 //this class is used to store the data of the individual carts
+
 public class CartItem_model {
 
 

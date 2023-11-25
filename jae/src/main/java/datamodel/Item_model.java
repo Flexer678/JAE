@@ -200,6 +200,8 @@ public static Item_model book_to_map_details(String roughData) {
         return newData;
 }
 
+//converts Itemmodel to Cartitem model 
+//this us uded to by the add to cart functions in the thing
 public static  CartItem_model itemmodel_to_CartItem_model(Item_model model){
         CartItem_model newCartItem = new CartItem_model();
         newCartItem.set_price(model.price);
