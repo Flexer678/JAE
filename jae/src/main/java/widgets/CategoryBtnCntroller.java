@@ -30,15 +30,17 @@ public class CategoryBtnCntroller implements Initializable, EventHandler<ActionE
     }
 
 
+    //sets the name to the category
     public void set_category(String category){
         categoryName = category;
         name.setText(category);
 
     }
 
+    //handles the onclick event of category page and switches to search page for the results
     public void get_category(ActionEvent event) throws IOException{
         sceneController control = new sceneController();
-        control.switchToSearchPage(event, categoryName, sceneController.types[2]);
+        control.switchToSearchPage(event, categoryName, sceneController.types[2]);//type 2 is of type category
         System.out.println(name.getText());
         
     }

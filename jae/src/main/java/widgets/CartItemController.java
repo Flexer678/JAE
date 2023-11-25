@@ -21,8 +21,11 @@ import javafx.scene.layout.AnchorPane;
 import server.BookApi;
 import server.StoreApi;
 
+
+//controlls all the item properties that are in the cartItem
 public class CartItemController implements  EventHandler<ActionEvent> {
 
+    //container
     @FXML
     AnchorPane cartItem;
     @FXML
@@ -47,12 +50,14 @@ public class CartItemController implements  EventHandler<ActionEvent> {
     @FXML
     Button qtyAdd; 
 
+    //id which will later be resued for removing itself
     private String id;
     private int qty;
     private int index;
 
-    public static CartItem_model model_data;
 
+    
+    public static CartItem_model model_data;
     
     public String getId() {
         return id;
@@ -128,6 +133,7 @@ public class CartItemController implements  EventHandler<ActionEvent> {
 
     }
 
+    //responsible for setting all the properties to the data
     public void set_data(CartItem_model model){
         model_data = model;
         System.out.println("working");

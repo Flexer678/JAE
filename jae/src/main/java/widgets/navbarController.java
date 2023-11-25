@@ -77,6 +77,8 @@ public class navbarController implements EventHandler<ActionEvent>, Initializabl
         controller.switchToSearchPage(event, "Store items", sceneController.types[3]);
     }
     
+
+    
     public void go_back_hpage(ActionEvent event) throws IOException{
        sceneController controller = new sceneController();
        controller.switchtoMainPage(event, localFiles.getName());

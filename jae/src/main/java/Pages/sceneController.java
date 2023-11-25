@@ -28,6 +28,7 @@ public class sceneController {
         FXMLLoader loader = new  FXMLLoader(getClass().getResource("detailPage.fxml"));
         root =loader.load();
         DetailPage page = loader.getController();
+        page.mod = model;
         page.display_detail(model, isBook);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -88,6 +89,7 @@ public class sceneController {
             page.get_category_results(search);
         }
         page.display_search_results_name(search);
+
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

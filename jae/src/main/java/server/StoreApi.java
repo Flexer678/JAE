@@ -205,6 +205,7 @@ public class StoreApi {
         // System.out.println(response);
         String[] keyValuePairs = response.split("},");
 
+        //seperating each item to be converted
         for (String s : keyValuePairs) {
 
             Item_model data =Item_model.store_to_map(s + "}");

@@ -14,6 +14,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import datamodel.Item_model;
 
+
+
+//this class handles all the searches for the items
+// it can be used to call the following : {random, search, get details , }
 public class BookApi {
 
     private static String[] randomList = {"dart", "atomic", "python", "Java"};
@@ -121,6 +125,8 @@ public class BookApi {
     
   
 
+
+//responsible for turing the string response to an item model
      public static Item_model make_data(String response) {
         response = response.substring(response.indexOf("{") + 1, response.length() - 3);
         Item_model data =Item_model.book_to_map_details(response + "}");
@@ -130,16 +136,17 @@ public class BookApi {
     }
 
 
-    
+    //responsible from taking the item model and making it a list    
     private static ArrayList<Item_model> make_data_list(String response) {
         ArrayList<Item_model> returnData = new ArrayList<Item_model>();
          System.out.println(response);
+         //removing unnecessary strings
         response = response.substring(response.indexOf(":[", 1) + 2, response.length() - 3);
         
-        String[] keyValuePairs = response.split("},");
+        String[] keyValuePairs = response.split("},"); 
 
+           //seperating each items to be converted
         for (String s : keyValuePairs) {
-
             Item_model data =Item_model.book_to_map(s + "}");
             returnData.add(data);
         }
@@ -147,6 +154,7 @@ public class BookApi {
 
     }
 
+    
     private static String getRandomElement(String[] list) {
         Random rand = new Random();
         return list[rand.nextInt(list.length)];

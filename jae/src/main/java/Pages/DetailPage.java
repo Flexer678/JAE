@@ -27,9 +27,6 @@ import server.BookApi;
 import widgets.navbarController;
 
 public class DetailPage implements Initializable {
-
-
-    // name and dscription of the item
     @FXML
     Text name, description; 
     
@@ -43,7 +40,13 @@ public class DetailPage implements Initializable {
     HBox navholder;
 
     @FXML
+    Button addToCartBtn;
+
+    @FXML
     FlowPane similarItems;
+
+
+    Item_model mod;
 
     public void display_name(String names) {
         name.setText(names);
@@ -51,6 +54,7 @@ public class DetailPage implements Initializable {
 
     //this displays the details of the item in a new page and is called by the item_controller.java file
     public void display_detail(Item_model model,Boolean isBook) throws IOException {
+        model = mod;
        if (isBook) {
         System.out.println("book is calling");
         model = BookApi.get_product_details_by_id(model.getId());
@@ -71,11 +75,12 @@ public class DetailPage implements Initializable {
        }
     }
 
-    public void addToCart(CartItem_model model) {
-        name.setText(model.get_name());
-        price.setText(Double.toString(model.get_price()));
+    public void add_to_cart(ActionEvent event) {
+        localFiles.cartItems.add(Item_model.itemmodel_to_CartItem_model(mod));
 
     }
+
+
 
     //his handles the back button
     public void back_to_homepage(ActionEvent event) throws IOException{
@@ -94,7 +99,6 @@ public class DetailPage implements Initializable {
             navholder.getChildren().add(box);
     }
 
-    //the initialize is just like the main function and is called when the page loads
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         try {

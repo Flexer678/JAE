@@ -56,20 +56,22 @@ public class ItemController implements Initializable {
     @FXML
     VBox itemview;
 
-    Item_model model;
+    public static Item_model model;
 
 
+    public void set_model (Item_model model1){
+        model = model1;
+    }
 
     public void set_data(Item_model item) {
-        model = item;
+        set_model(item);
         isBook = item.getIsBook();
         System.out.println(item.title);
-       // image.setImage(new Image(item.get_image_url()));
+       
         name.setText(item.title);
         price.setText(Double.toString(item.price));
         Image image3 = new Image(item.image);
         imageiIem.setImage((image3));
-        //price.setText(item.get_price().toString());
     }
 
     @Override
