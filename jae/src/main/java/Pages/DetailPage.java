@@ -3,6 +3,7 @@ package Pages;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutionException;
 
 import assets.localFiles;
 import datamodel.CartItem_model;
@@ -24,6 +25,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import server.BookApi;
+
+import datamodel.Item_model;
 import widgets.navbarController;
 
 public class DetailPage implements Initializable {
@@ -46,7 +49,7 @@ public class DetailPage implements Initializable {
     FlowPane similarItems;
 
 
-    Item_model mod;
+    public Item_model mod;
 
     public void display_name(String names) {
         name.setText(names);
@@ -75,10 +78,11 @@ public class DetailPage implements Initializable {
        }
     }
 
-    public void add_to_cart(ActionEvent event) {
-        localFiles.cartItems.add(Item_model.itemmodel_to_CartItem_model(mod));
+    public void add_to_cart(ActionEvent event) throws ExecutionException, InterruptedException {
+        localFiles.add_to_cart(Item_model.itemmodel_to_CartItem_model(mod));
 
     }
+
 
 
 

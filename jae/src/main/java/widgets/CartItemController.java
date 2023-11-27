@@ -126,6 +126,13 @@ public class CartItemController implements  EventHandler<ActionEvent> {
 
     public void removeItem(ActionEvent event){
         localFiles.cartItems.remove(index);
+        sceneController controller = new sceneController();
+        try {
+            controller.switchtoCartPage(event);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     public void setIndex(int in){
@@ -140,6 +147,7 @@ public class CartItemController implements  EventHandler<ActionEvent> {
         itemName.setText(model.get_name().substring(0, 5)+ "...");
         itemDescription.setText("click to view description");
         itemPrice.setText("$" +model.get_price().toString());
+        System.out.println(model.get_name());
         itemImage.setImage(new Image(model.get_image()));
         quantity.setText(Integer.toString(model.get_quantity()));
         System.out.println("done");

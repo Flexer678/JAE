@@ -53,6 +53,10 @@ public class SearchPage implements EventHandler<ActionEvent>, Initializable {
     }
 
 
+    //placeholder for the itemcontrollers
+    public static void get_detail(ActionEvent event) throws IOException {
+    }
+    
     
     public void get_book_results(String searchName) throws IOException{
         System.out.println(searchName+  "alex");

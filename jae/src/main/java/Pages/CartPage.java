@@ -113,7 +113,6 @@ public class CartPage implements Initializable ,EventHandler<ActionEvent>{
             controller.setId(arrayList.get(i).get_id());
   
             controller.set_data(arrayList.get(i));
-            //controller.setIndex(i);
             System.out.println("working3");
             HBox hbox = new HBox(box);
             total_price += arrayList.get(i).get_price();

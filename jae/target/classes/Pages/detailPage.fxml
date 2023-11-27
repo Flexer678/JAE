@@ -64,21 +64,11 @@
                               </Text>
                               <HBox alignment="CENTER" prefHeight="71.0" prefWidth="239.0">
                                  <children>
-                                    <Button fx:id="qtyMinus" mnemonicParsing="false" prefHeight="71.0" prefWidth="74.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="+" textFill="WHITE">
-                                       <font>
-                                          <Font size="33.0" />
-                                       </font>
-                                    </Button>
-                                    <Label fx:id="qtyNum" alignment="CENTER" prefHeight="60.0" prefWidth="71.0" text="10" textAlignment="CENTER">
+                                    <Label fx:id="qtyNum" alignment="CENTER" prefHeight="60.0" prefWidth="71.0" text="1" textAlignment="CENTER">
                                        <font>
                                           <Font size="29.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="qtyAdd" mnemonicParsing="false" prefHeight="71.0" prefWidth="74.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="+" textFill="WHITE">
-                                       <font>
-                                          <Font size="33.0" />
-                                       </font>
-                                    </Button>
                                  </children>
                               </HBox>
                               <HBox prefHeight="71.0" prefWidth="15.0" />

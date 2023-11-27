@@ -17,13 +17,14 @@ public class localFiles {
     public static String name = "";
 
     //user token file
-    public static String tokenFile = "src/main/java/assets/token.txt";
-
+   public static String tokenFile = "\\Users\\user\\Documents\\alex file\\java school proj\\SHOPPING\\JAE\\jae\\src\\main\\java\\assets\\token.txt";
+   
+    public static String tokenFiles = new File("jae/src/main/java/assets/token.txt").getAbsolutePath();
+    //tokenFile.concat("path to the property file");
 
     //intermediate storage of cart items
     public static ArrayList<CartItem_model> cartItems = new ArrayList<CartItem_model>();
 
-    
 
     //getter for cartItems
     public static ArrayList<CartItem_model> getCartItems() {
@@ -44,7 +45,9 @@ public class localFiles {
 
     //checks for a user token in tokenFile. if found, bypass login screen and login as that user.
     public static boolean isLoggedIn() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(tokenFile));
+       
+        File reader = new File( tokenFiles );
+        BufferedReader br = new BufferedReader(new FileReader(reader));
         String line = br.readLine();
         br.close();
         if (line == null) {

@@ -16,9 +16,6 @@ import datamodel.Item_model;
 public class StoreApi {
 
     private static String url = "https://us-central1-fakestore-redirect.cloudfunctions.net/app/";
-    public static void main(String args[]) throws Exception {
-      get_product_by_id("12");
-    }
 
 
     public static ArrayList<Item_model> get_all() throws IOException{

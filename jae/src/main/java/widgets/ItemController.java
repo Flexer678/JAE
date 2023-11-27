@@ -56,11 +56,13 @@ public class ItemController implements Initializable {
     @FXML
     VBox itemview;
 
-    public static Item_model model;
+    //to make the model global accross the class for certin functins like add to cart or see description
+    public Item_model model;
 
 
     public void set_model (Item_model model1){
         model = model1;
+        System.out.println(model.title);
     }
 
     public void set_data(Item_model item) {
@@ -94,6 +96,8 @@ public class ItemController implements Initializable {
     }
 
     public void add_to_cart() throws ExecutionException, InterruptedException {
+
+        System.out.println(model.title);
         localFiles.add_to_cart(Item_model.itemmodel_to_CartItem_model(model));
         System.out.println(localFiles.getCartItems());
     }
