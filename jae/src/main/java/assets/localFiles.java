@@ -43,6 +43,16 @@ public class localFiles {
         localFiles.name = name;
     }
 
+    public static void logout(){
+        try {
+            String tokenFileName = localFiles.getTokenFile();
+        BufferedWriter br = new BufferedWriter(new FileWriter(tokenFileName));
+        br.write(""); // writes the edited string buffer to the new file
+        br.close();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
     //checks for a user token in tokenFile. if found, bypass login screen and login as that user.
     public static boolean isLoggedIn() throws IOException {
        

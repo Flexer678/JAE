@@ -42,12 +42,24 @@ public class navbarController implements EventHandler<ActionEvent>, Initializabl
     @FXML
     private Button cart;
     
+    @FXML
+    private Button logoutBtn;
      @Override
     public void initialize(URL url, ResourceBundle arg1) {
        display_name();
     }
 
-
+    
+    public void logout_fun(ActionEvent event) {
+        localFiles.logout();
+        sceneController controller = new sceneController();
+        try {
+            controller.switchtoSignInPage(event);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
     
     public void go_to_cart(ActionEvent event) throws IOException{
         sceneController controller = new sceneController();

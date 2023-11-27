@@ -75,6 +75,7 @@
                         <Font size="52.0" />
                      </font>
                   </Label>
+                  <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#logout_fun" prefHeight="44.0" prefWidth="78.0" style="-fx-background-color: purple;" text="log out" />
                </children>
             </VBox>
          </children>
